@@ -13,6 +13,18 @@ const ServicesWrapper = styled.div`
         margin-bottom: 6rem ; `
 }
 `
+const ServiceCardsWrapper = styled.div`
+    display: none;
+    ${media.md`
+       display:block`
+    }
+`
+const ServicesSlideWrapper = styled.div`
+    ${media.md`
+       display:none; `
+    }
+`
+
 const ServiceCards = () => {
    return services.map((service,index) => {
                             return (
@@ -27,16 +39,23 @@ const ServiceCards = () => {
 
 
 const ServicesSection = () => {
-    const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
+   
     return (
         <ServicesWrapper>
             <Container>
                 <PrimaryHeading>our services</PrimaryHeading>
-                <Row>
-                    {   
-                        isMobile ? <ServiceSlides/> : <ServiceCards/>
-                    }
-                </Row>
+                <ServicesSlideWrapper>
+                    <Row>
+                        <ServiceSlides />
+                    </Row>
+                </ServicesSlideWrapper>
+                    
+                <ServiceCardsWrapper>
+                    <Row>
+                        <ServiceCards/>   
+                    </Row>
+                </ServiceCardsWrapper>
+                
             </Container>
         </ServicesWrapper>
     )
