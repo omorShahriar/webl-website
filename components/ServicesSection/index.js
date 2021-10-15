@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Container, Row, Col, media } from 'styled-bootstrap-grid';
-import { useMediaQuery } from 'react-responsive'
+
 import { PrimaryHeading } from '../Typography';
 import { services } from '../../assets/seed'
 import { ServiceCard } from './ServiceCard';
