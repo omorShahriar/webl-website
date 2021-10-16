@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { media } from 'styled-bootstrap-grid'
 
 export const Nav = styled.nav`
     background : #fff;
@@ -16,6 +16,13 @@ export const Nav = styled.nav`
     @media screen and (max-width : 960px) {
         transition : 0.8s all ease;
     }
+    ${media.lg`
+        background: none;
+        width:100%;
+        position:absolute;
+    `
+    }
+
 `
 
 export const NavbarContainer = styled.div`
@@ -42,7 +49,7 @@ export const NavLogo = styled.a`
 export const MobileIcon = styled.div`
     display : none;
 
-    @media screen and (max-width : 768px) {
+    @media screen and (max-width : 767px) {
         display: flex; 
         margin-right: 24px;
         cursor : pointer;
@@ -60,7 +67,7 @@ export const NavMenu = styled.ul`
     text-align: center;
   
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
         display : none;
 
     }
@@ -80,6 +87,10 @@ export const NavLink = styled.a`
     padding: 0 1rem;
     height : 100%;
     cursor: pointer;
+    ${media.lg`
+        color : #fff;
+    `
+    }
     &.active {
         color : #FFA400;
     }

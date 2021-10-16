@@ -1,19 +1,14 @@
 import styled from 'styled-components'
 import { Container, Row, Col, media } from 'styled-bootstrap-grid';
 
+import { GenericWrapper } from '../Utils/GenericWrapper';
 import { PrimaryHeading } from '../Typography';
 
 import { ReviewsSlide } from './ReviewsSlide';
 
 
 
-const ReviewsWrapper = styled.div`
-    margin-bottom: 5rem;
-;
-    ${media.md`
-        margin-bottom: 9rem ; `
-}
-`
+
 
 
 
@@ -22,14 +17,14 @@ const ReviewsWrapper = styled.div`
 
 const ReviewSection = () => {
     return (
-        <ReviewsWrapper>
+        <GenericWrapper>
             <Container>
                 <PrimaryHeading>customer reviews</PrimaryHeading>
                 <Row>
                     <ReviewsSlide />
                 </Row>
             </Container>
-        </ReviewsWrapper>
+        </GenericWrapper>
     )
 }
 

@@ -1,18 +1,13 @@
 import styled from 'styled-components'
 import { Container, Row, Col, media } from 'styled-bootstrap-grid';
-
+import { GenericWrapper } from '../Utils/GenericWrapper';
 import { PrimaryHeading } from '../Typography';
 import { services } from '../../assets/seed'
 import { ServiceCard } from './ServiceCard';
 import { ServiceSlides } from './ServicesSlide';
 
-const ServicesWrapper = styled.div`
-    margin-bottom: 4rem;
-;
-    ${media.md`
-        margin-bottom: 6rem ; `
-}
-`
+
+
 const ServiceCardsWrapper = styled.div`
     display: none;
     ${media.md`
@@ -41,7 +36,7 @@ const ServiceCards = () => {
 const ServicesSection = () => {
    
     return (
-        <ServicesWrapper>
+        <GenericWrapper>
             <Container>
                 <PrimaryHeading>our services</PrimaryHeading>
                 <ServicesSlideWrapper>
@@ -57,7 +52,7 @@ const ServicesSection = () => {
                 </ServiceCardsWrapper>
                 
             </Container>
-        </ServicesWrapper>
+        </GenericWrapper>
     )
 }
 export default ServicesSection;

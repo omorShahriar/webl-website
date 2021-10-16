@@ -11,6 +11,7 @@ const FooterOuterWrapper = styled.footer`
     background-image: url("/footer-background.svg") ;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: top center;
     
     ${
     media.md`
@@ -31,24 +32,24 @@ const FooterOuterWrapper = styled.footer`
 `
 
 const FooterInnerrWrapper = styled.div`
-    padding: 5rem 0;
+    padding: 3rem 0;
     color:#fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
     ${
     media.md`
-        padding: 7rem 0;
+        padding: 5rem 0;
     `
     }
     ${
     media.lg`
-        padding: 9rem 0;
+        padding: 7rem 0;
     `
     }
     ${
     media.xl`
-        padding: 12rem 0;
+        padding: 9rem 0;
     `
     }
 
@@ -81,6 +82,7 @@ const CopyRightBox = styled.div`
     background-image: url("/copyright-bg.svg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: top center;
     font-size: 1rem;
     padding-top: 1.5rem;
     padding-bottom: 0.5rem;

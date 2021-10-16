@@ -7,14 +7,29 @@ import Separator from '../Utils/Seperator';
 
 
 const HeroWrapper = styled.div`
-    margin-top: 4rem;
-    margin-bottom : 8rem;
+    padding-top: 3rem;
+    padding-bottom : 5rem;
 ;
-    ${media.md`
-        margin-top: 6rem;
-    margin-bottom : 12rem; `
-   }
+   
+
+   ${media.lg`
+            background: url("/heroBg.svg");
+            background-size: 67%;
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            padding-top: 6rem;
+            padding-bottom: 10rem;
+   `}
+   ${media.xl`
+            
+            padding-bottom: 15rem;
+   `}
+   ${media.xxl`
+            
+            padding-bottom: 20rem;
+   `}
 `
+
 const HeroHeading = styled.h1`
     color:#424242;
     font-weight: bold;
