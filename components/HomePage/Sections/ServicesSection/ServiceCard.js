@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid';
 import { BsGearWideConnected,BsFillFlagFill } from "react-icons/bs";
-import { SecondaryHeading, SecondaryBodyText } from '../Typography'
-import Link from 'next/link'
-import Button from '../Button';
-import { Blank } from '../Utils/Blank';
+import { SecondaryHeading, SecondaryBodyText } from '../../../Typography'
+
+import StyledButton from '../../../StyledButton';
+import { Blank } from '../../../Utils/Blank';
 
 const ServiceWrapper = styled.div`
     display: flex;
@@ -47,10 +47,11 @@ export const ServiceCard = ({title,text,slug}) => {
             <SecondaryHeading>{title}</SecondaryHeading>
              <Blank gap="1"/>
             <SecondaryBodyText textAlign="center">{text}</SecondaryBodyText>
-            <Blank gap="3"/>
-            <Link href={`/${slug}`} passHref>
-                <Button borderColor="#3CBB95">Learn More</Button>
-            </Link>
+            <Blank gap="3" />
+            <StyledButton href={`/${slug}`} borderColor="#3CBB95">
+                Learn More
+            </StyledButton>
+           
             
         </ServiceWrapper>
     )

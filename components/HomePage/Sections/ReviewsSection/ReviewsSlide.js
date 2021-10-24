@@ -1,27 +1,32 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore,{ Pagination} from 'swiper';
+import SwiperCore,{ Pagination,Autoplay} from 'swiper';
 
 
 import {  Col } from 'styled-bootstrap-grid';
-import { services } from '../../assets/seed'
-import { ServiceCard } from './ServiceCard';
+import { reviews } from '../../../../assets/seed'
+import ReviewCard from './ReviewCard';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import styles from '../CustomStyles/customSlideStyle.module.css'
+import styles from '../../../CustomStyles/customSlideStyle.module.css'
 
-SwiperCore.use([Pagination]);
+SwiperCore.use([Pagination,Autoplay]);
 
-export const ServiceSlides = () => {
+export const ReviewsSlide = () => {
     return (
         <Col>
             <Swiper
                 spaceBetween={50}
                 slidesPerView={1}
                 loop={true}
+                grabCursor={true}
+                autoplay={{
+                    "delay": 2500,
+                    "disableOnInteraction": false
+}}
                 pagination={{
                     "dynamicBullets": true
                 }}
@@ -30,11 +35,11 @@ export const ServiceSlides = () => {
                 className={styles.swiper}
             >
                 {
-                    services.map((service,index) => {
+                    reviews.map((review,index) => {
                             return (
                                
                                     <SwiperSlide key={index}>
-                                        <ServiceCard title={service.title} text={service.text} slug={service.slug}/>
+                                        <ReviewCard name={review.name} text={review.text} />
                                     </SwiperSlide>
                                 )}
                                 

@@ -1,13 +1,15 @@
 import React from 'react'
+import { urlFor } from '../../../../lib/sanity';
+import Image from 'next/image';
 import styled from 'styled-components'
 import { Container, Row, Col,media } from 'styled-bootstrap-grid';
-import Button from '../Button';
-import Link from 'next/link'
-import Separator from '../Utils/Seperator';
+import StyledButton from '../../../StyledButton';
+
+import {VerticalSeparator} from '../../../Utils/Seperator';
 
 
 const HeroWrapper = styled.div`
-    padding-top: 3rem;
+    padding-top: 5rem;
     padding-bottom : 5rem;
 ;
    
@@ -17,11 +19,11 @@ const HeroWrapper = styled.div`
             background-size: 67%;
             background-repeat: no-repeat;
             background-position: bottom right;
-            padding-top: 6rem;
+            padding-top: 10rem;
             padding-bottom: 10rem;
    `}
    ${media.xl`
-            
+            padding-top: 15rem;
             padding-bottom: 15rem;
    `}
    ${media.xxl`
@@ -68,6 +70,7 @@ const ButtonWrapper = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 1.5rem;
+    min-height: 3rem;
     ${media.md`
         justify-content: start;
     `
@@ -76,35 +79,35 @@ const ButtonWrapper = styled.div`
 
 
 
-const HeroSection = () => {
-  
+const HeroSection = ({content}) => {
+
     return (
         <HeroWrapper>
             <Container>
                 <Row >
                     <Col md="6" lgAlignSelf="center">
-                        <HeroHeading>Hero Text</HeroHeading>
-                        <HeroDescription>Sed metus a egestas morbi ac 
-                            est a erat. Arcu arcu habitant eu cursus cursus 
-                            amet auctor egestas.
+                        <HeroHeading>{content.heading}</HeroHeading>
+                        <HeroDescription>
+                            {
+                                content.tagline
+                            }
                         </HeroDescription>
                         
-                            <ButtonWrapper>
-                            <Link href="/quote" passHref>
-                                <Button borderColor="#424242" hoverColor="#3CBB95"> Get A Quote</Button>
-                            </Link>
-                            <Separator/>
-                            <Link href="/appointment" passHref>
-                                 <Button borderColor="#FFB300" hoverColor="#FFDD02"> Book An Appointment</Button>
-                            </Link>   
-                        </ButtonWrapper>
+                        <ButtonWrapper>
+                            <StyledButton href="/quote" borderColor="#3CBB95">
+                                Get A Quote
+                            </StyledButton>
+                            <VerticalSeparator />
+                            <StyledButton href="/appointment" borderColor="#FFDD02">
+                                Book An Appointment
+                            </StyledButton>
+                                
+                            </ButtonWrapper>
                       
                         
                     </Col>
-                    <Col md="6" order="first" mdOrder="2" >
-                        
-                        
-                          <object type="image/svg+xml" data="/heroImage.svg" width="100%"/>  
+                    <Col md="6" order="first" mdOrder="2" mdAlignSelf="center">
+                          <Image  src={urlFor(content.heroImage).url()} width={1753} height={1026} layout="responsive"/>  
                     </Col>
                 </Row>
             </Container>

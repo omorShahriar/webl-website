@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { Container, Row, Col, media } from 'styled-bootstrap-grid';
 
-import { GenericWrapper } from '../Utils/GenericWrapper';
-import { PrimaryHeading } from '../Typography';
+import { GenericWrapper } from '../../../Utils/GenericWrapper';
+import { PrimaryHeading } from '../../../Typography';
 
 import { ReviewsSlide } from './ReviewsSlide';
 

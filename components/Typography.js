@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
 
-export const PrimaryHeading = styled.h2`
+export const PrimaryHeading = styled.h1`
     color:#000;
     font-weight: bold;
     font-size : 1.75rem;
@@ -17,11 +17,13 @@ export const PrimaryHeading = styled.h2`
     }
 `
 
-export const SecondaryHeading = styled.h3`
+
+export const SecondaryHeading = styled.h2`
     color: ${({color}) =>  color ? color : "#424242" } ;
     font-weight: bold;
     font-size : 1.25rem;
     margin-bottom: .5rem;
+    text-align: ${({textAlign}) =>  textAlign ? textAlign : " " } ;
     ${
     media.lg` 
         font-size : 1.75rem;
@@ -29,7 +31,7 @@ export const SecondaryHeading = styled.h3`
     `
     }
 `
-export const TertiaryHedaing = styled.h4`
+export const TertiaryHedaing = styled.h3`
      color: ${({color}) =>  color ? color : "#424242" } ;
     font-weight: bold;
     font-size : 1rem;
@@ -44,8 +46,7 @@ export const TertiaryHedaing = styled.h4`
 
 export const SecondaryBodyText = styled.p`
     color: #7A7A7A;
-    font-size:0.75rem;
-    text-align: ${({ textAlign }) => textAlign};
+    font-size:.75rem;
     
      ${
     media.lg` 
@@ -54,3 +55,4 @@ export const SecondaryBodyText = styled.p`
     `
     }
 `
+

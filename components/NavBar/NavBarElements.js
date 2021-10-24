@@ -16,11 +16,18 @@ export const Nav = styled.nav`
     @media screen and (max-width : 960px) {
         transition : 0.8s all ease;
     }
-    ${media.lg`
-        background: none;
+
+    
+    @media screen and (min-width : 992px) {
+        background: ${({isHomePage}) => isHomePage ? "transparent" : "#fff" };
         width:100%;
-        position:absolute;
-    `
+        position: ${({isHomePage}) => isHomePage ? "fixed" : "sticky" }; 
+     }
+       
+      
+    
+    &.scrolling {
+        background: #fff;
     }
 
 `
@@ -65,11 +72,11 @@ export const NavMenu = styled.ul`
     align-items: center;
     list-style: none;
     text-align: center;
-  
+    
 
     @media screen and (max-width: 767px) {
         display : none;
-
+        
     }
 
 `
@@ -79,7 +86,7 @@ export const NavItem = styled.li`
 `
 
 export const NavLink = styled.a`
-    color : #424242;
+    color:#424242;
     display: flex;
     align-items: center;
     text-transform: uppercase;
@@ -88,9 +95,13 @@ export const NavLink = styled.a`
     height : 100%;
     cursor: pointer;
     ${media.lg`
-        color : #fff;
+        color:${({isHomePage}) => isHomePage ? "#fff" : "#424242" }
     `
     }
+     &.scrolling {
+        color: #424242;
+    }
+
     &.active {
         color : #FFA400;
     }

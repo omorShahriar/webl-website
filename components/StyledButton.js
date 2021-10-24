@@ -1,11 +1,17 @@
 import styled from 'styled-components'
+import Link from 'next/link'
 import { media } from 'styled-bootstrap-grid'
 
-const Button = styled.a`
+const LinkComponent = ({ as, children, className, href }) => (
+  <Link href={href} as={as} passHref>
+    <a className={className}>{children}</a>
+  </Link>
+)
+const StyledButton = styled(LinkComponent)`
     border-width: 2px;
     border-style: solid;
     border-radius: 15px;
-    border-color: ${({borderColor}) => borderColor};
+    border-color: ${({borderColor}) => borderColor ? borderColor : "#FFB300"};
     font-size: 0.75rem;
     font-weight: 300;
     color : #424242;
@@ -19,10 +25,8 @@ const Button = styled.a`
     `
     
     }
-
     &:hover {
-        border-color: ${({ hoverColor }) => hoverColor};
-        background:  ${({ hoverColor }) => hoverColor};;
+        background:  ${({ borderColor }) => borderColor ? borderColor : "#FFB300"};
     }
  `
-export default Button
+export default StyledButton

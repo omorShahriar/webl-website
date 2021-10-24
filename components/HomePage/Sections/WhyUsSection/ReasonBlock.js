@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
-import {SecondaryHeading,SecondaryBodyText} from "../Typography"
+import {SecondaryHeading,SecondaryBodyText} from "../../../Typography"
 
 const GiantNumber = styled.p`
     color:#B8E8CE;
