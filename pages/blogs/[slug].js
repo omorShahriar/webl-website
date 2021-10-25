@@ -2,17 +2,17 @@ import { useEffect, useState } from 'react';
 import MoonLoader from "react-spinners/ClipLoader";
 
 import ErrorPage from 'next/error';
-import { getBlogBySlug, getAllBlogs,getPaginatedBlogs, onBlogUpdate } from '../../lib/sanity';
+import { getBlogBySlug, getAllBlogs,getPaginatedBlogs, onBlogUpdate } from 'lib/sanity';
 import { Row, Col, Container } from "styled-bootstrap-grid";
-import {GenericWrapper} from '../../components/Utils/GenericWrapper'
-import { urlFor } from '../../lib/sanity';
+import {GenericWrapper} from 'components/Utils/GenericWrapper'
+import { urlFor } from 'lib/sanity';
 
 import moment from 'moment';
 import { useRouter } from 'next/router';
 
-import BlogHeader from '../../components/BlogsPage/BlogHeader';
-import BlogContent from '../../components/BlogsPage/BlogContent';
-import PreviewAlert from '../../components/BlogsPage/PreviewAlert';
+import BlogHeader from 'components/BlogsPage/BlogHeader';
+import BlogContent from 'components/BlogsPage/BlogContent';
+import PreviewAlert from 'components/BlogsPage/PreviewAlert';
 
 const BlogDetail = ({blog: initialBlog, preview,error}) => {
   const router = useRouter();
@@ -72,6 +72,13 @@ const BlogDetail = ({blog: initialBlog, preview,error}) => {
 
 export async function getStaticProps({params, preview = false, previewData}) {
   const blog = await getBlogBySlug(params.slug, preview);
+
+  if (!blog) {
+    return {
+      notFound : true
+    }
+  }
+  
   return {
     props: { blog, preview},
     revalidate: 60 * 60

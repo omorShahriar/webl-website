@@ -1,7 +1,8 @@
 module.exports = {
   generateBuildId: () => 'build',
   images: {
-    domains: ['cdn.sanity.io']
+    domains: ['cdn.sanity.io'],
+    minimumCacheTTL: 60
   },
 
   reactStrictMode: true,
