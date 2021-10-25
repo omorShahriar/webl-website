@@ -1,5 +1,5 @@
 import { groq } from 'next-sanity'
-import {getClient} from '../lib/sanity.server'
+import {getClient} from '../lib/sanity'
 
 const pageQuery = groq`
   *[_type == "landingPage" ][0] {

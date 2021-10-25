@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-const LinkComponent = ({ as, children, className, href }) => (
+export const LinkComponent = ({ as, children, className, href }) => (
   <Link href={href} as={as} passHref>
     <a className={className}>{children}</a>
   </Link>

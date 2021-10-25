@@ -5,7 +5,7 @@ export const PrimaryHeading = styled.h1`
     color:#000;
     font-weight: bold;
     font-size : 1.75rem;
-    text-align: center;
+    text-align: ${({ textAlign }) => textAlign ? textAlign : "center"};
     margin-bottom: 3rem;
     text-transform: uppercase;
     ${

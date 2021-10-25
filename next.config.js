@@ -1,4 +1,5 @@
 module.exports = {
+  generateBuildId: () => 'build',
   images: {
     domains: ['cdn.sanity.io']
   },

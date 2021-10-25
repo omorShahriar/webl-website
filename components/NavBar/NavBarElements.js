@@ -7,7 +7,7 @@ export const Nav = styled.nav`
     display : flex;
     justify-content : center;
     align-items : center;
-    font-family: 'Inter', sans-serif; 
+    font-family: 'Poppins', sans-serif;
     font-size : 1rem;
     position : sticky;
     top : 0;

@@ -8,6 +8,6 @@ export const VerticalSeparator = styled.div`
 export const HorizontalSeparator = styled.div`
     background: ${({bgColor}) => bgColor ? bgColor : "#7A7A7A"} ;
     width: ${({width}) => width ? width : "48px" };
-    height: 2px;
-    margin:  0 1rem; 
+    height: 3px;
+    margin:  1rem 0 ; 
 `

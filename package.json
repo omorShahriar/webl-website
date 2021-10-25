@@ -10,17 +10,21 @@
   },
   "dependencies": {
     "@svgr/webpack": "^5.5.0",
+    "moment": "^2.29.1",
     "next": "11.1.2",
     "next-sanity": "^0.4.0",
     "react": "17.0.2",
+    "react-bootstrap": "^2.0.0",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
+    "react-spinners": "^0.11.0",
     "styled-bootstrap-grid": "^3.1.1",
     "styled-components": "^5.3.1",
-    "swiper": "^7.0.8"
+    "swiper": "^7.0.8",
+    "swr": "^1.0.1"
   },
   "devDependencies": {
-    "eslint": "8.0.0",
+    "eslint": "^8.1.0",
     "eslint-config-next": "11.1.2"
   }
 }

@@ -57,9 +57,9 @@ const Navbar = ({ toggle }) => {
                                     </Link>
                                 </NavItem>
                                 <NavItem>
-                                    <Link href="/blog" passHref>
-                                        <NavLink isHomePage={isHomePage} className={router.pathname == "/blog" ? "active" : "" ||
-                                                            navbar ? "scrolling" : ''}>BLOG</NavLink>
+                                    <Link href="/blogs" passHref>
+                                        <NavLink isHomePage={isHomePage} className={router.pathname == "/blogs" ? "active" : "" ||
+                                                            navbar ? "scrolling" : ''}>BLOGS</NavLink>
                                     </Link>
                                 </NavItem>
                                 <NavItem>
@@ -107,8 +107,8 @@ const Navbar = ({ toggle }) => {
                                         </Link>
                                     </NavItem>
                                     <NavItem>
-                                        <Link href="/blog" passHref>
-                                            <NavLink className={router.pathname == "/blog" ? "active" : ""}>BLOG</NavLink>
+                                        <Link href="/blogs" passHref>
+                                            <NavLink className={router.pathname == "/blogs" ? "active" : ""}>BLOGS</NavLink>
                                         </Link>
                                     </NavItem>
                                     <NavItem>
