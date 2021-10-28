@@ -27,6 +27,7 @@
     "swr": "^1.0.1"
   },
   "devDependencies": {
+    "@sanity/cli": "^2.21.7",
     "eslint": "^8.1.0",
     "eslint-config-next": "11.1.2"
   }

@@ -30,7 +30,5 @@
     "react-icons": "^4.3.1",
     "styled-components": "^5.2.0"
   },
-  "devDependencies": {
-    "@sanity/cli": "^2.21.7"
-  }
+  "devDependencies": {}
 }
