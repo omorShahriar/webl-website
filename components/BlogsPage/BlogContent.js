@@ -35,7 +35,6 @@ const ContentSection = styled.div`
   }
   a{
     text-decoration:none;
-    margin-left:.5rem;
     color:#FFB300;
     padding-bottom: .15rem;
     position: relative;

@@ -56,7 +56,7 @@ const ServiceBox = () => {
                                 Can't see what you're looking for?
                             </SecondaryHeading>
                             <CTAWrapper>
-                                <StyledButton href="/contact-us" borderColor="#3CBB95">
+                                <StyledButton href="/contact" borderColor="#3CBB95">
                                     CONTACT US
                                 </StyledButton>
                             </CTAWrapper>

@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "concurrently \"next dev\" \"cd studio && sanity start\"",
+    "build": "echo 'Building Sanity to public/studio…' && cd studio && sanity build ../public/studio -y && cd .. && cross-env NODE_ENV=production next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.5.0",
     "@svgr/webpack": "^5.5.0",
     "moment": "^2.29.1",
     "next": "11.1.2",
@@ -16,6 +17,7 @@
     "react": "17.0.2",
     "react-bootstrap": "^2.0.0",
     "react-dom": "17.0.2",
+    "react-hot-toast": "^2.1.1",
     "react-icons": "^4.3.1",
     "react-spinners": "^0.11.0",
     "sharp": "^0.29.2",

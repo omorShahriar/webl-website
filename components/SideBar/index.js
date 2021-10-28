@@ -26,8 +26,8 @@ const Sidebar = ({isOpen,toggle}) => {
                     <Link href='/work' passHref>
                         <SidebarLink className={router.pathname == "/work" ? "active" : ""} onClick={toggle}> Work</SidebarLink>
                     </Link>
-                    <Link href='/contact-us' passHref>
-                        <SidebarLink className={router.pathname == "/contact-us" ? "active" : ""} onClick={toggle}> Contact Us</SidebarLink>
+                    <Link href='/contact' passHref>
+                        <SidebarLink className={router.pathname == "/contact" ? "active" : ""} onClick={toggle}> Contact Us</SidebarLink>
                     </Link>
                   </SidebarMenu>  
   
