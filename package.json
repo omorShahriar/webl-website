@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"next dev\" \"cd studio && sanity start\"",
-    "build": "echo 'Building Sanity to public/studio…' && cd studio && sanity build ../public/studio -y && cd .. && cross-env NODE_ENV=production next build",
+    "build": "echo 'Building Sanity to public/studio…' && cd studio && sanity install && sanity build ../public/studio -y && cd .. && cross-env NODE_ENV=production next build",
     "start": "next start",
     "lint": "next lint"
   },
