@@ -1,5 +1,6 @@
-export default function (req, res) {
-  let nodemailer = require("nodemailer");
+const nodemailer = require("nodemailer");
+
+export default async (req, res) => {
   const password = process.env.GMAIL_PASS;
   const transporter = nodemailer.createTransport({
     port: 465,
@@ -11,17 +12,22 @@ export default function (req, res) {
     secure: true,
   });
 
-  transporter.verify(function (error, success) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Server is ready to take our messages");
-    }
+  await new Promise((resolve, reject) => {
+    // verify connection configuration
+    transporter.verify(function (error, success) {
+      if (error) {
+        console.log(error);
+        reject(error);
+      } else {
+        console.log("Server is ready to take our messages");
+        resolve(success);
+      }
+    });
   });
-  console.log(req.body);
   const mailData = {
     from: `'webl-contact' <${process.env.GMAIL_USER}>`,
-    to: process.env.GMAIL_USER,
+    replyTo: req.body.email,
+    to: process.env.EMAIL_RECIEVER,
     subject: `[Contact from website] : ${req.body.subject} `,
     html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html lang="en">
@@ -52,10 +58,19 @@ export default function (req, res) {
       </body>
       </html>`,
   };
-  transporter.sendMail(mailData, (err, info) => {
-    if (err) console.error(err);
-    else console.log(info);
+
+  await new Promise((resolve, reject) => {
+    // send mail
+    transporter.sendMail(mailData, (err, info) => {
+      if (err) {
+        console.error(err);
+        reject(err);
+      } else {
+        console.log(info);
+        resolve(info);
+      }
+    });
   });
 
-  return res.status(200).json({ message: "it worked fine" });
-}
+  return res.status(200).json({ status: "OK" });
+};
