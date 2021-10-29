@@ -107,7 +107,7 @@ const Footer = () => {
               <ReachLink type="phone" value="+8801797039209" />
             </FooterInnerrWrapper>
             <CopyRightBox>
-              Ⓒ WebL Innovation, {new Date().getFullYear()}
+              Ⓒ WebL Innovations, {new Date().getFullYear()}
             </CopyRightBox>
           </Col>
         </Row>

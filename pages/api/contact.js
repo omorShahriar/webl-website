@@ -21,7 +21,7 @@ export default function (req, res) {
   console.log(req.body);
   const mailData = {
     from: `'webl-contact' <${process.env.GMAIL_USER}>`,
-    to: "weblinnovations.team@gmail.com",
+    to: process.env.GMAIL_USER,
     subject: `[Contact from website] : ${req.body.subject} `,
     html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html lang="en">
