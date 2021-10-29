@@ -1,14 +1,29 @@
-import sendgrid from "@sendgrid/mail";
+export default function (req, res) {
+  let nodemailer = require("nodemailer");
+  const password = process.env.GMAIL_PASS;
+  const transporter = nodemailer.createTransport({
+    port: 465,
+    host: "smtp.gmail.com",
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: password,
+    },
+    secure: true,
+  });
 
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
-
-async function sendEmail(req, res) {
-  try {
-    await sendgrid.send({
-      to: "omor.shahriar2000@gmail.com", // Your email where you'll receive emails
-      from: "omor.shahriar2000@gmail.com", // your website email address here
-      subject: `[Contact from website] : ${req.body.subject}`,
-      html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  transporter.verify(function (error, success) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Server is ready to take our messages");
+    }
+  });
+  console.log(req.body);
+  const mailData = {
+    from: `'webl-contact' <${process.env.GMAIL_USER}>`,
+    to: "weblinnovations.team@gmail.com",
+    subject: `[Contact from website] : ${req.body.subject} `,
+    html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html lang="en">
       <head>
         <meta charset="utf-8">
@@ -36,13 +51,11 @@ async function sendEmail(req, res) {
         </div>
       </body>
       </html>`,
-    });
-  } catch (error) {
-    console.log(error);
-    return res.status(error.statusCode || 500).json({ error: error.message });
-  }
+  };
+  transporter.sendMail(mailData, (err, info) => {
+    if (err) console.error(err);
+    else console.log(info);
+  });
 
-  return res.status(200).json({ error: "" });
+  return res.status(200).json({ message: "it worked fine" });
 }
-
-export default sendEmail;

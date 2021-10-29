@@ -48,7 +48,7 @@ const ContactForm = () => {
     }
 
     setErrors({ ...tempErrors });
-    console.log("errors", errors);
+
     return isValid;
   };
 
@@ -62,7 +62,7 @@ const ContactForm = () => {
     if (isValidForm) {
       setLoading(true);
 
-      const res = await fetch("/api/sendgrid", {
+      const res = await fetch("/api/contact", {
         body: JSON.stringify({
           email: email,
           fullname: fullname,
@@ -93,7 +93,6 @@ const ContactForm = () => {
       notify("Thank you! Your Message has been delivered.", true);
       setLoading(false);
     }
-    console.log(fullname, email, subject, message);
   };
 
   return (
@@ -118,6 +117,8 @@ const ContactForm = () => {
       <Input
         type="email"
         name="email"
+        pattern=".+@.+\..+"
+        maxLength={320}
         value={email}
         onChange={(e) => {
           setEmail(e.target.value);
