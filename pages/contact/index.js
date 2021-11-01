@@ -5,6 +5,7 @@ import ContactForm from "components/ContactPage/ContactForm";
 import styled from "styled-components";
 import { BiPhone } from "react-icons/bi";
 import { HiMail } from "react-icons/hi";
+import SocialIconBox from "components/SocialIconBox";
 
 const Title = styled(PrimaryHeading)`
   font-size: 3.5rem;
@@ -20,48 +21,40 @@ const SubTitle = styled(SecondaryHeading)`
   font-size: 1rem;
 `;
 const OuterContactBox = styled.div`
-  margin-right: 13%;
-  display: flex;
-  justify-content: center;
   margin-top: 2rem;
   ${media.lg`
        margin-top:4rem;
     `}
-  @media screen and (max-width:767px) {
-    flex-direction: column;
-    margin-right: 0;
-  }
+  ${media.xl`
+       margin-top:6rem;
+    `}
 `;
 const ReachOutBox = styled.div`
-  padding-right: 1rem;
-
-  text-align: right;
   @media screen and (max-width: 767px) {
+    margin-top: 3rem;
     text-align: center;
-    order: 2;
-    padding-right: 0;
   }
 `;
 const ContactBox = styled.div`
-  padding-left: 1rem;
-  border-left: 2px solid #3cbb95;
+  padding: 2rem;
+  border-radius: 25px;
+  border: 2px solid #ffb300;
   @media screen and (max-width: 767px) {
     text-align: center;
-    border-left: none;
-    padding-left: 0;
+    padding: 1rem;
   }
 `;
 const Heading = styled.h2`
+  margin-bottom: 2rem;
   font-size: 2rem;
   text-transform: uppercase;
 `;
 
 const ReachButton = styled.a`
-  margin-top: 2rem;
   color: #ffb300;
   text-decoration: none;
   display: inline-flex;
-
+  margin-bottom: 0.5em;
   align-items: center;
   justify-content: flex-end;
   position: relative;
@@ -89,7 +82,6 @@ const ReachButton = styled.a`
 const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   @media screen and (max-width: 767px) {
     justify-content: center;
   }
@@ -115,25 +107,32 @@ const Contact = () => {
           can.{" "}
         </SubTitle>
         <OuterContactBox>
-          <ReachOutBox>
-            <Heading>reach out</Heading>
-            <ButtonWrapper>
-              <ReachButton href={"tel:+8801797039209"}>
-                <StyledBiPhone />
-                +8801797039209
-              </ReachButton>
-            </ButtonWrapper>
-            <ButtonWrapper>
-              <ReachButton href={"mailto:weblinnovations.team@gmail.com"}>
-                <StyledHiMail />
-                weblinnovations.team@gmail.com
-              </ReachButton>
-            </ButtonWrapper>
-          </ReachOutBox>
-          <ContactBox>
-            <Heading>send a message</Heading>
-            <ContactForm />
-          </ContactBox>
+          <Row>
+            <Col md={4} order={2} mdAlignSelf="center">
+              <ReachOutBox>
+                <Heading>reach out</Heading>
+                <ButtonWrapper>
+                  <ReachButton href={"tel:+8801797039209"}>
+                    <StyledBiPhone />
+                    +8801797039209
+                  </ReachButton>
+                </ButtonWrapper>
+                <ButtonWrapper>
+                  <ReachButton href={"mailto:weblinnovations.team@gmail.com"}>
+                    <StyledHiMail />
+                    weblinnovations.team@gmail.com
+                  </ReachButton>
+                </ButtonWrapper>
+                <SocialIconBox />
+              </ReachOutBox>
+            </Col>
+            <Col md={6} mdOffset={2} mdOrder={2}>
+              <ContactBox>
+                <Heading>send a message</Heading>
+                <ContactForm />
+              </ContactBox>
+            </Col>
+          </Row>
         </OuterContactBox>
       </Container>
     </GenericWrapper>

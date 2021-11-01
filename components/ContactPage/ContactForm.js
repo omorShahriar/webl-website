@@ -17,6 +17,7 @@ const notify = (message, success) =>
 const ContactForm = () => {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
+  const [companyName, setcompanyName] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -36,6 +37,10 @@ const ContactForm = () => {
     }
     if (email.length <= 0) {
       tempErrors["email"] = true;
+      isValid = false;
+    }
+    if (companyName.length <= 0) {
+      tempErrors["companyName"] = true;
       isValid = false;
     }
     if (subject.length <= 0) {
@@ -66,6 +71,7 @@ const ContactForm = () => {
         body: JSON.stringify({
           email: email,
           fullname: fullname,
+          companyName: companyName,
           subject: subject,
           message: message,
         }),
@@ -80,6 +86,7 @@ const ContactForm = () => {
         console.log(error);
         setFullname("");
         setEmail("");
+        setcompanyName("");
         setSubject("");
         setMessage("");
         notify(" Oops! Something went wrong, please try again.", false);
@@ -88,6 +95,7 @@ const ContactForm = () => {
       }
       setFullname("");
       setEmail("");
+      setcompanyName("");
       setSubject("");
       setMessage("");
       notify("Thank you! Your Message has been delivered.", true);
@@ -125,6 +133,20 @@ const ContactForm = () => {
         }}
       />
       {errors?.email && <ErrorMessage>Email cannot be empty.</ErrorMessage>}
+      <Label htmlFor="company-name">
+        Company Name<span>*</span>
+      </Label>
+      <Input
+        type="text"
+        name="company-name"
+        value={companyName}
+        onChange={(e) => {
+          setcompanyName(e.target.value);
+        }}
+      />
+      {errors?.companyName && (
+        <ErrorMessage>Company name cannot be empty.</ErrorMessage>
+      )}
       <Label htmlFor="subject">
         Subject<span>*</span>
       </Label>
@@ -151,7 +173,9 @@ const ContactForm = () => {
         <ErrorMessage>Message body cannot be empty.</ErrorMessage>
       )}
       <ButtonBox>
-        <Button disabled={loading}>Send</Button>
+        <Button disabled={loading} loading={loading ? "true" : ""}>
+          Send
+        </Button>
         {loading && <MoonLoader color="#3CBB95" size={16} />}
       </ButtonBox>
       <Toaster />

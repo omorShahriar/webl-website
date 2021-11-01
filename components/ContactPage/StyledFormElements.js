@@ -19,7 +19,9 @@ export const Label = styled.label`
 export const Input = styled.input`
   background: transparent;
   border: none;
-  border-bottom: 3px solid #b8e8ce;
+  border: 2px solid #b8e8ce;
+  border-radius: 10px;
+  margin-top: 1em;
   padding: 0.5rem 0;
   padding-left: 1rem;
   font-weight: light;
@@ -27,14 +29,16 @@ export const Input = styled.input`
   outline: none;
   transform: 0.1s;
   :focus {
-    border-bottom: 3px solid #3cbb95;
+    border: 3px solid #3cbb95;
   }
 `;
 
 export const TextArea = styled.textarea`
   background: transparent;
   border: none;
-  border-bottom: 3px solid #b8e8ce;
+  border: 2px solid #b8e8ce;
+  border-radius: 10px;
+  margin-top: 1em;
   padding: 0.5rem 0;
   padding-left: 1rem;
   font-weight: light;
@@ -42,7 +46,7 @@ export const TextArea = styled.textarea`
   outline: none;
   transform: 0.1s;
   :focus {
-    border-bottom: 3px solid #3cbb95;
+    border: 2px solid #3cbb95;
   }
 `;
 
@@ -55,7 +59,7 @@ export const ButtonBox = styled.div`
 
 export const Button = styled.button`
   padding: 0.5rem 2.5rem;
-  margin-right: 1rem;
+  margin-right: ${({ loading }) => (loading ? "1rem" : 0)};
   display: flex;
   align-items: center;
   background: #fff;

@@ -48,6 +48,7 @@ export default async (req, res) => {
               </div>
                 <div class="container" style="margin-left: 20px;margin-right: 20px;">
                     <h3>You've got a new mail from ${req.body.fullname}, their email is: ✉️${req.body.email} </h3>
+                    <h3>The name of their company is ${req.body.companyName}</h3>
                 <div style="font-size: 16px;">
                 <p>Message:</p>
                 <p>${req.body.message}</p>
