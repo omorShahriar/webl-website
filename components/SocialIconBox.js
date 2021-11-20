@@ -18,11 +18,14 @@ const Box = styled.div`
 const SocialLink = styled.a`
   color: #424242;
   text-decoration: none;
-  font-size: 1.75rem;
-  margin: 0.5em;
+  font-size: 2rem;
+  margin-right: 0.5em;
   transition: all 0.3s ease-in;
   &:hover {
     color: #ffb300;
+  }
+  @media screen and (max-width: 767px) {
+    margin: 0.5em;
   }
 `;
 
@@ -34,7 +37,7 @@ const Heading = styled.h3`
 `;
 const SocialIconBox = () => (
   <>
-    <Heading>Social Links</Heading>
+    <Heading>Find Us On</Heading>
     <Box>
       <SocialLink
         target="_blank"

@@ -1,3 +1,5 @@
+import { NextSeo } from "next-seo";
+
 import { Container, media, Row, Col } from "styled-bootstrap-grid";
 import { PrimaryHeading, SecondaryHeading } from "components/Typography";
 import { GenericWrapper } from "components/Utils/GenericWrapper";
@@ -99,43 +101,46 @@ const StyledHiMail = styled(HiMail)`
 
 const Contact = () => {
   return (
-    <GenericWrapper>
-      <Container>
-        <Title>let’s talk</Title>
-        <SubTitle>
-          Fill the form and send in your queries. We’ll respond as soon as we
-          can.{" "}
-        </SubTitle>
-        <OuterContactBox>
-          <Row>
-            <Col md={4} order={2} mdAlignSelf="center">
-              <ReachOutBox>
-                <Heading>reach out</Heading>
-                <ButtonWrapper>
-                  <ReachButton href={"tel:+8801797039209"}>
-                    <StyledBiPhone />
-                    +8801797039209
-                  </ReachButton>
-                </ButtonWrapper>
-                <ButtonWrapper>
-                  <ReachButton href={"mailto:weblinnovations.team@gmail.com"}>
-                    <StyledHiMail />
-                    weblinnovations.team@gmail.com
-                  </ReachButton>
-                </ButtonWrapper>
-                <SocialIconBox />
-              </ReachOutBox>
-            </Col>
-            <Col md={6} mdOffset={2} mdOrder={2}>
-              <ContactBox>
-                <Heading>send a message</Heading>
-                <ContactForm />
-              </ContactBox>
-            </Col>
-          </Row>
-        </OuterContactBox>
-      </Container>
-    </GenericWrapper>
+    <>
+      <NextSeo title="Contact" />
+      <GenericWrapper>
+        <Container>
+          <Title>let’s talk</Title>
+          <SubTitle>
+            Fill the form and send in your queries. We’ll respond as soon as we
+            can.{" "}
+          </SubTitle>
+          <OuterContactBox>
+            <Row>
+              <Col md={4} order={2} mdAlignSelf="center">
+                <ReachOutBox>
+                  <Heading>reach out</Heading>
+                  <ButtonWrapper>
+                    <ReachButton href={"tel:+8801797039209"}>
+                      <StyledBiPhone />
+                      +8801797039209
+                    </ReachButton>
+                  </ButtonWrapper>
+                  <ButtonWrapper>
+                    <ReachButton href={"mailto:weblinnovations.team@gmail.com"}>
+                      <StyledHiMail />
+                      weblinnovations.team@gmail.com
+                    </ReachButton>
+                  </ButtonWrapper>
+                  <SocialIconBox />
+                </ReachOutBox>
+              </Col>
+              <Col md={6} mdOffset={2} mdOrder={2}>
+                <ContactBox>
+                  <Heading>send a message</Heading>
+                  <ContactForm />
+                </ContactBox>
+              </Col>
+            </Row>
+          </OuterContactBox>
+        </Container>
+      </GenericWrapper>
+    </>
   );
 };
 

@@ -62,7 +62,7 @@ const FindUsBox = styled.div`
 
 const SocialIconBox = styled.div`
   display: flex;
-  width: 80%;
+  width: 100%;
   justify-content: space-between;
   font-size: 1rem;
   ${media.lg`
@@ -70,6 +70,19 @@ const SocialIconBox = styled.div`
     `}
 `;
 
+const SocialLink = styled.a`
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+
+  transition: all 0.3s ease-in;
+  &:hover {
+    color: #ffb300;
+  }
+  @media screen and (max-width: 767px) {
+    margin: 0.5em;
+  }
+`;
 const CopyRightBox = styled.div`
   background-image: url("/copyright-bg.svg");
   background-size: cover;
@@ -97,10 +110,20 @@ const Footer = () => {
                 <FooterLinks />
               </FooterLinkBox>
               <FindUsBox>
-                <TertiaryHedaing color="#fff">find us on</TertiaryHedaing>
+                <TertiaryHedaing color="#fff">Find Us On</TertiaryHedaing>
                 <SocialIconBox>
-                  <FaLinkedin />
-                  <FaFacebook />
+                  <SocialLink
+                    target="_blank"
+                    href="https://www.facebook.com/weblinnovations"
+                  >
+                    <FaFacebook />
+                  </SocialLink>
+                  <SocialLink
+                    target="_blank"
+                    href="https://www.linkedin.com/company/webl-innovations/"
+                  >
+                    <FaLinkedin />
+                  </SocialLink>
                 </SocialIconBox>
               </FindUsBox>
               <ReachLink type="mail" value="weblinnovations.team@gmail.com" />

@@ -5,8 +5,7 @@ import { media } from "styled-bootstrap-grid";
 import { SecondaryHeading, SecondaryBodyText } from "../Typography";
 import AuthorBox from "./AuthorBox";
 import Link from "next/link";
-import { urlFor } from "../../lib/sanity";
-
+import { sanityImageProps } from "../../lib/sanity";
 const CardLink = styled.a`
   text-decoration: none;
   list-style: none;
@@ -70,14 +69,7 @@ const CardItem = ({ title, subtitle, image, date, author, link }) => {
   return (
     <CardWrapper>
       <CoverImageBox>
-        {image && (
-          <Image
-            src={urlFor(image).url()}
-            layout="responsive"
-            width={500}
-            height={334}
-          />
-        )}
+        {image && <Image {...sanityImageProps(image)} layout="responsive" />}
       </CoverImageBox>
       <CardContent>
         <Title>{title.length > 40 ? title.substr(0, 40) + "..." : title}</Title>

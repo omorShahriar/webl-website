@@ -1,57 +1,87 @@
-import styled from "styled-components"
-import Image from 'next/image'
-import AuthorBox from "./AuthorBox"
+import styled from "styled-components";
+import Image from "next/image";
+import AuthorBox from "./AuthorBox";
 import { media } from "styled-bootstrap-grid";
 import { PrimaryHeading } from "../Typography";
-
+import { useRouter } from "next/router";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  LinkedinIcon,
+  LinkedinShareButton,
+} from "react-share";
 const CoverImageBox = styled.div`
-    margin: 2rem 0;
-    border-radius: 25px ;
-    overflow: hidden;
-     ${
-            media.md`
+  margin: 2rem 0;
+  border-radius: 25px;
+  overflow: hidden;
+  ${media.md`
                 border-radius:50px;
                 margin: 2.25rem 0;
-            `
-      }
-      ${
-            media.lg`
+            `}
+  ${media.lg`
                 
                 margin: 2.5rem 0;
-            `
-      }
-      ${
-            media.lg`
+            `}
+      ${media.lg`
                 
                 margin: 2.75rem 0;
-            `
-      }
-`
+            `}
+`;
 const Title = styled(PrimaryHeading)`
   margin-bottom: 0%;
-`
-const Synopsys = styled.p`
+`;
+const Info = styled.div`
   margin: 2rem 0;
-  background: #B8E8CE;
-  color:#424242;
-  padding:1rem;
+  background: #b8e8ce;
+  color: #424242;
+  padding: 1rem;
   border-radius: 15px;
-`
-export default function BlogHeader({title, subtitle, coverImage, date, author}) {
+`;
+const Synopsys = styled.div`
+  margin: 2rem 0;
+  border: 2px solid #b8e8ce;
+  color: #424242;
+  padding: 1rem;
+  border-radius: 15px;
+`;
+
+export default function BlogHeader({
+  title,
+  subtitle,
+  imageProps,
+  date,
+  author,
+}) {
+  const { asPath } = useRouter();
+  const baseurl =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : "https://weblinnovations.com";
+  const fullUrl = `${baseurl}${asPath}`;
+
   return (
     <>
       <Title>{title}</Title>
-      <AuthorBox author={author} date={date} centered={true}/>
-      {coverImage &&
+      <AuthorBox author={author} date={date} centered={true} />
+      {imageProps.src && (
         <CoverImageBox>
-           <Image
-          src={coverImage} alt={title} layout="responsive" width={898} height={600} quality={90}/>
+          <Image {...imageProps} alt={title} layout="responsive" quality={90} />
         </CoverImageBox>
-         
-        }
-      
-      <Synopsys >{subtitle}</Synopsys>
-      
+      )}
+      <Info>
+        Share on facebook{" "}
+        <FacebookShareButton url={fullUrl}>
+          <FacebookIcon size={32} round={true} />
+        </FacebookShareButton>{" "}
+        | Linkedin
+        <LinkedinShareButton title={title} url={fullUrl}>
+          <LinkedinIcon size={32} round={true} />
+        </LinkedinShareButton>
+      </Info>
+      <Synopsys>
+        <h2>Quick Summary</h2>
+        {subtitle}
+      </Synopsys>
     </>
-  )
+  );
 }

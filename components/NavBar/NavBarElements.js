@@ -3,7 +3,7 @@ import { media } from "styled-bootstrap-grid";
 
 export const Nav = styled.nav`
   background: #fff;
-  height: 80px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,8 +12,14 @@ export const Nav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 10;
-  transition: 0.3s all ease;
-
+  transition: 0.2s all ease-out;
+  &::after {
+    content: "";
+    border-bottom: none;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+  }
   @media screen and (min-width: 992px) {
     background: ${({ isHomePage }) => (isHomePage ? "transparent" : "#fff")};
     width: 100%;
@@ -22,17 +28,17 @@ export const Nav = styled.nav`
 
   &.scrolling {
     background: #fff;
+    &::after {
+      border-bottom: 2px solid #3cbb95;
+    }
   }
 `;
 
 export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 80px;
   z-index: 1;
   width: 100%;
-  padding: 0 24px;
-  max-width: 1100px;
   align-items: center;
 `;
 
@@ -42,7 +48,6 @@ export const NavLogo = styled.a`
   font-size: 1.5rem;
   display: flex;
   align-items: center;
-  margin-left: 24px;
 `;
 
 export const MobileIcon = styled.div`
