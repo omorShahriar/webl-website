@@ -63,7 +63,7 @@ export default function BlogHeader({
     <>
       <Title>{title}</Title>
       <AuthorBox author={author} date={date} centered={true} />
-      {imageProps.src && (
+      {imageProps && (
         <CoverImageBox>
           <Image {...imageProps} alt={title} layout="responsive" quality={90} />
         </CoverImageBox>

@@ -24,7 +24,7 @@ import PreviewAlert from "components/BlogsPage/PreviewAlert";
 const BlogDetail = ({ blog: initialBlog, preview, error }) => {
   const router = useRouter();
   const [blog, setBlog] = useState(initialBlog);
-  const imageProps = sanityImageProps(blog.coverImage);
+  const imageProps = sanityImageProps(blog?.coverImage);
 
   useEffect(() => {
     let sub;
