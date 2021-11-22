@@ -11,6 +11,8 @@ import author from "./documents/author";
 import heroSection from "./objects/heroSection";
 import whyUsSection from "./objects/whyUsSection";
 import reason from "./objects/reason";
+import reviewsSection from "./objects/reviewsSection";
+import testimonial from "./objects/testimonial";
 import imageSection from "./objects/imageSection";
 import textSection from "./objects/textSection";
 
@@ -33,6 +35,8 @@ export default createSchema({
     page,
     whyUsSection,
     reason,
+    reviewsSection,
+    testimonial,
     imageSection,
     textSection,
     link,

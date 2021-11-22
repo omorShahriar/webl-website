@@ -12,7 +12,11 @@ export default {
       name: "content",
       type: "array",
       title: "Landing Page sections",
-      of: [{ type: "heroSection" }, { type: "whyUsSection" }],
+      of: [
+        { type: "heroSection" },
+        { type: "whyUsSection" },
+        { type: "reviewsSection" },
+      ],
     },
   ],
 };
