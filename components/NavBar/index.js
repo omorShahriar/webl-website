@@ -108,7 +108,7 @@ const Navbar = ({ toggle }) => {
                           : ""
                       }
                     >
-                      BLOGS
+                      BLOG
                     </NavLink>
                   </Link>
                 </NavItem>
@@ -190,7 +190,7 @@ const Navbar = ({ toggle }) => {
                     <NavLink
                       className={router.pathname == "/blog" ? "active" : ""}
                     >
-                      BLOGS
+                      BLOG
                     </NavLink>
                   </Link>
                 </NavItem>

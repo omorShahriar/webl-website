@@ -16,8 +16,11 @@ export default {
     },
     {
       name: "photo",
-      type: "figure",
+      type: "image",
       title: "Photo of the person",
+      options: {
+        hotspot: true,
+      },
     },
   ],
 };

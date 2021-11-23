@@ -26,9 +26,10 @@ const Title = styled(SecondaryHeading)`
 const SubTitle = styled(SecondaryBodyText)`
   font-size: 1.2rem;
   text-align: center;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
   ${media.lg`
                 text-align: left;
+                margin-bottom: 10rem;
             `}
 `;
 const ImageBox = styled.div`

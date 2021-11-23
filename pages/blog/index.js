@@ -27,8 +27,8 @@ export const BlogList = ({ data = [] }) => {
           date={moment(blog.date).format("LL")}
           image={blog.coverImage}
           link={{
-            href: "/blogs/[slug]",
-            as: `/blogs/${blog.slug}`,
+            href: "/blog/[slug]",
+            as: `/blog/${blog.slug}`,
           }}
         />
       </Col>
@@ -42,7 +42,7 @@ export default function BlogPage({ blogs, preview }) {
 
   return (
     <>
-      <NextSeo title="Blogs" />
+      <NextSeo title="Blog" />
       <GenericWrapper>
         <Container>
           {preview && <PreviewAlert />}

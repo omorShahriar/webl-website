@@ -10,6 +10,7 @@ import {
   LinkedinIcon,
   LinkedinShareButton,
 } from "react-share";
+import { VerticalSeparator } from "components/Utils/Seperator";
 const CoverImageBox = styled.div`
   margin: 2rem 0;
   border-radius: 25px;
@@ -36,6 +37,14 @@ const Info = styled.div`
   color: #424242;
   padding: 1rem;
   border-radius: 15px;
+  display: flex;
+  align-items: center;
+
+  span {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-right: 1rem;
+  }
 `;
 const Synopsys = styled.div`
   margin: 2rem 0;
@@ -69,11 +78,12 @@ export default function BlogHeader({
         </CoverImageBox>
       )}
       <Info>
-        Share on facebook{" "}
+        <span>Share on : </span>
+
         <FacebookShareButton url={fullUrl}>
           <FacebookIcon size={32} round={true} />
-        </FacebookShareButton>{" "}
-        | Linkedin
+        </FacebookShareButton>
+        <VerticalSeparator bgColor="#424242" />
         <LinkedinShareButton title={title} url={fullUrl}>
           <LinkedinIcon size={32} round={true} />
         </LinkedinShareButton>
