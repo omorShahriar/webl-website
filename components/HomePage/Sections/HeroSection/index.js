@@ -12,18 +12,21 @@ const HeroWrapper = styled.div`
   padding-bottom: 5rem;
   ${media.lg`
             background: url("/heroBg.svg");
-            background-size: 67%;
-            background-repeat: no-repeat;
-            background-position: bottom right;
-            padding-top: 10rem;
-            padding-bottom: 10rem;
+                background-size: 77%;
+    background-repeat: no-repeat;
+    background-position: 149% 62%;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
    `}
   ${media.xl`
+      background-position: 149% 80%;
             padding-top: 15rem;
             padding-bottom: 15rem;
    `}
-   ${media.xxl`
-            
+  ${media.xxl`
+            background-size: 67%;
+
+    background-position: bottom right;
             padding-bottom: 20rem;
    `}
 `;
@@ -36,8 +39,13 @@ const HeroHeading = styled.h1`
   margin-top: 2rem;
   ${media.md`
         margin-top: 1rem;
-        font-size : 3.5rem;
+        font-size : 2.75rem;
+       
+    `}
+  ${media.lg`
         text-align: left;
+        font-size : 3rem;
+      
     `}
 `;
 
@@ -48,9 +56,10 @@ const HeroDescription = styled.p`
   margin-top: 0.5rem;
   ${media.md`
         font-size : 1rem;
-        text-align: left;
+        
     `}
   ${media.lg`
+  text-align: left;
         font-size : 1.2rem;
        
     `}
@@ -61,7 +70,7 @@ const ButtonWrapper = styled.div`
   justify-content: center;
   margin-top: 1.5rem;
   min-height: 3rem;
-  ${media.md`
+  ${media.lg`
         justify-content: start;
     `}
 `;
@@ -71,7 +80,7 @@ const HeroSection = ({ content }) => {
     <HeroWrapper>
       <Container>
         <Row>
-          <Col md="6" lgAlignSelf="center">
+          <Col lg="6" lgAlignSelf="center">
             <HeroHeading>{content.heading}</HeroHeading>
             <HeroDescription>{content.tagline}</HeroDescription>
 
@@ -85,7 +94,7 @@ const HeroSection = ({ content }) => {
               </StyledButton>
             </ButtonWrapper>
           </Col>
-          <Col md="6" order="first" mdOrder="2" mdAlignSelf="center">
+          <Col lg="6" order="first" lgOrder="2" mdAlignSelf="center">
             <Image
               src={urlFor(content.heroImage).url()}
               width={1753}

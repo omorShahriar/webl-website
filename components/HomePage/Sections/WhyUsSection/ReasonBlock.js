@@ -17,17 +17,18 @@ const GiantNumber = styled.p`
 const ReasonWrapper = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 1.75rem;
 `;
 const ReasonTextBox = styled.div`
   padding-left: 1rem;
 `;
-const ReasonBlock = ({ title, text, index }) => {
+const ReasonBlock = ({ title, description, index }) => {
   return (
     <ReasonWrapper>
-      <GiantNumber>{index}</GiantNumber>
+      <GiantNumber>{index + 1}</GiantNumber>
       <ReasonTextBox>
         <SecondaryHeading>{title}</SecondaryHeading>
-        <SecondaryBodyText>{text}</SecondaryBodyText>
+        <SecondaryBodyText>{description}</SecondaryBodyText>
       </ReasonTextBox>
     </ReasonWrapper>
   );

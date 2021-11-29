@@ -23,19 +23,36 @@ export const reasons = [
 
 export const services = [
   {
-    title: "Service 1",
-    text: "Eget at nunc diam eratdui.u skjfsfdg dasdgjfajglj sdlgja get at nunc diam erat du",
-    slug: "service-1",
+    title: "Course Content",
+    text: "Researched written course content for your next successful course or eBook.",
   },
   {
-    title: "Service 2",
-    text: "Eget at nunc diam eratdui.u skjfsfdg dasdgjfajglj sdlgja get at nunc diam erat du",
-    slug: "service-2",
+    title: "Script Writing",
+    text: "Our well written interactive and narrative scripts will help you to take your course more easily and without any hassle.",
   },
   {
-    title: "Service 3",
-    text: "Eget at nunc diam eratdui.u skjfsfdg dasdgjfajglj sdlgja get at nunc diam erat du",
-    slug: "service-3",
+    title: "PowerPoint Presentations",
+    text: "Make your course easily understandable and consumable for your audience with our intuitive and attractive presentation slides.",
+  },
+  {
+    title: "Worksheet & Workbook",
+    text: "Assess your students’ Performance with interactive and challenging worksheets and workbooks.",
+  },
+  {
+    title: "Article & Blog Writings",
+    text: "Our well researched article writing and personal blog writing can boost traffic to your website.",
+  },
+  {
+    title: "Consultation",
+    text: "Get started with the world of online courses with our expert consultancy service.",
+  },
+  {
+    title: "Technical Writing",
+    text: "Get your awesome project or research written by our technical writers.",
+  },
+  {
+    title: " Redesign & Rebranding",
+    text: "Redesign your old materials with your new brand design language and reach your potential audience.",
   },
 ];
 

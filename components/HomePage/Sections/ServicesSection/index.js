@@ -15,17 +15,34 @@ const ServicesSlideWrapper = styled.div`
   ${media.md`
        display:none; `}
 `;
-
+const OuterWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+`;
+const InnerWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 2rem;
+  @media (min-width: 480px) {
+    width: 50%;
+  }
+  @media (min-width: 1024px) {
+    width: 33.33%;
+  }
+`;
 const ServiceCards = () => {
   return services.map((service, index) => {
     return (
-      <Col key={index} md="4">
+      <InnerWrap key={index}>
         <ServiceCard
           title={service.title}
           text={service.text}
           slug={service.slug}
         />
-      </Col>
+      </InnerWrap>
     );
   });
 };
@@ -42,9 +59,9 @@ const ServicesSection = () => {
         </ServicesSlideWrapper>
 
         <ServiceCardsWrapper>
-          <Row>
+          <OuterWrap>
             <ServiceCards />
-          </Row>
+          </OuterWrap>
         </ServiceCardsWrapper>
       </Container>
     </GenericWrapper>

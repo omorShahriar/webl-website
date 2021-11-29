@@ -7,7 +7,7 @@ import { SecondaryHeading, SecondaryBodyText } from "../../../Typography";
 import StyledButton from "../../../StyledButton";
 import { Blank } from "../../../Utils/Blank";
 
-const ServiceWrapper = styled.div`
+const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +22,7 @@ const ServiceWrapper = styled.div`
         width: 50%;
     margin:0 auto;
     `}
-  ${media.xl`
+  ${media.md`
         width: 80%;
     margin:0 auto;
     `}
@@ -31,21 +31,29 @@ const IconWrapper = styled.div`
   color: #3cbb95;
   font-size: 5rem;
 `;
-
+const Title = styled(SecondaryHeading)`
+  ${media.lg` 
+        font-size : 1.25rem;
+       
+    `}
+`;
+const Text = styled(SecondaryBodyText)`
+  flex-grow: 1;
+`;
 export const ServiceCard = ({ title, text, slug }) => {
   return (
-    <ServiceWrapper>
+    <Card>
       <IconWrapper>
         <BsGearWideConnected />
       </IconWrapper>
 
-      <SecondaryHeading>{title}</SecondaryHeading>
+      <Title>{title}</Title>
       <Blank gap="1" />
-      <SecondaryBodyText textAlign="center">{text}</SecondaryBodyText>
+      <Text textAlign="center">{text}</Text>
       <Blank gap="1.5" />
       <StyledButton href="/services" borderColor="#3CBB95">
         Learn More
       </StyledButton>
-    </ServiceWrapper>
+    </Card>
   );
 };

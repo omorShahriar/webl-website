@@ -1,34 +1,37 @@
-import styled from 'styled-components'
-import { Container, Row, Col, media } from 'styled-bootstrap-grid';
-import { PrimaryHeading } from '../../../Typography';
-import {GenericWrapper} from "../../../Utils/GenericWrapper"
+import styled from "styled-components";
+import { Container, Row, Col, media } from "styled-bootstrap-grid";
+import { PrimaryHeading } from "../../../Typography";
+import { GenericWrapper } from "../../../Utils/GenericWrapper";
 
-import { reasons } from '../../../../assets/seed'
-import ReasonBlock from './ReasonBlock';
+import { reasons } from "../../../../assets/seed";
+import ReasonBlock from "./ReasonBlock";
 
-
-const WhyUsSection = () => {
-    return (
-        <GenericWrapper>
-             <Container>
-                <Row>
-                    <Col>
-                        <PrimaryHeading>Why Choose Us</PrimaryHeading>
-                    </Col>
-                </Row>
-                <Row>
-                    {reasons.map((reason) => {
-                        return (
-                            <Col key={reason.index} md="6">
-                                <ReasonBlock title={reason.title} text={reason.text} index={reason.index}/>
-                            </Col>
-                        )
-                    })}
-                </Row>
-            </Container>
-        </GenericWrapper>
-       
-    )
-}
+const WhyUsSection = ({ content }) => {
+  console.log(content);
+  return (
+    <GenericWrapper>
+      <Container>
+        <Row>
+          <Col>
+            <PrimaryHeading>{content.heading}</PrimaryHeading>
+          </Col>
+        </Row>
+        <Row>
+          {content.reasons.map((reason, index) => {
+            return (
+              <Col key={index} md="6">
+                <ReasonBlock
+                  title={reason.title}
+                  description={reason.description}
+                  index={index}
+                />
+              </Col>
+            );
+          })}
+        </Row>
+      </Container>
+    </GenericWrapper>
+  );
+};
 
 export default WhyUsSection;
