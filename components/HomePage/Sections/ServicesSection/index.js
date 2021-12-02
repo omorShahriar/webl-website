@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Container, Row, Col, media } from "styled-bootstrap-grid";
 import { GenericWrapper } from "../../../Utils/GenericWrapper";
 import { PrimaryHeading } from "../../../Typography";
-import { services } from "../../../../assets/seed";
+// import { services } from "../../../../assets/seed";
 import { ServiceCard } from "./ServiceCard";
 import { ServiceSlides } from "./ServicesSlide";
 
@@ -33,34 +33,34 @@ const InnerWrap = styled.div`
     width: 33.33%;
   }
 `;
-const ServiceCards = () => {
+const ServiceCards = ({ services }) => {
   return services.map((service, index) => {
     return (
       <InnerWrap key={index}>
         <ServiceCard
           title={service.title}
-          text={service.text}
-          slug={service.slug}
+          description={service.description}
+          icon={service.icon}
         />
       </InnerWrap>
     );
   });
 };
 
-const ServicesSection = () => {
+const ServicesSection = ({ content }) => {
   return (
     <GenericWrapper>
       <Container>
-        <PrimaryHeading>our services</PrimaryHeading>
+        <PrimaryHeading>{content.heading}</PrimaryHeading>
         <ServicesSlideWrapper>
           <Row>
-            <ServiceSlides />
+            <ServiceSlides services={content.services} />
           </Row>
         </ServicesSlideWrapper>
 
         <ServiceCardsWrapper>
           <OuterWrap>
-            <ServiceCards />
+            <ServiceCards services={content.services} />
           </OuterWrap>
         </ServiceCardsWrapper>
       </Container>

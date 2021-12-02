@@ -30,6 +30,9 @@ const StyledButton = styled(LinkComponent)`
   &.active {
     color: #ffa400;
   }
+  &.active:hover {
+    color: #fff;
+  }
   &:hover {
     background: ${({ borderColor }) => (borderColor ? borderColor : "#FFB300")};
   }

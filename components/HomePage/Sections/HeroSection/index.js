@@ -4,7 +4,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import { Container, Row, Col, media } from "styled-bootstrap-grid";
 import StyledButton from "../../../StyledButton";
-
+import { sanityImageProps } from "lib/sanity";
 import { VerticalSeparator } from "../../../Utils/Seperator";
 
 const HeroWrapper = styled.div`
@@ -76,6 +76,7 @@ const ButtonWrapper = styled.div`
 `;
 
 const HeroSection = ({ content }) => {
+  const imageProps = sanityImageProps(content?.heroImage);
   return (
     <HeroWrapper>
       <Container>
@@ -95,12 +96,7 @@ const HeroSection = ({ content }) => {
             </ButtonWrapper>
           </Col>
           <Col lg="6" order="first" lgOrder="2" mdAlignSelf="center">
-            <Image
-              src={urlFor(content.heroImage).url()}
-              width={1753}
-              height={1026}
-              layout="responsive"
-            />
+            <Image {...imageProps} layout="responsive" />
           </Col>
         </Row>
       </Container>

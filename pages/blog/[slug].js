@@ -3,7 +3,7 @@ import { NextSeo } from "next-seo";
 
 import MoonLoader from "react-spinners/ClipLoader";
 import { sanityImageProps } from "lib/sanity";
-import ErrorPage from "next/error";
+
 import {
   getBlogBySlug,
   getAllBlogs,
@@ -12,7 +12,6 @@ import {
 } from "lib/sanity";
 import { Row, Col, Container } from "styled-bootstrap-grid";
 import { GenericWrapper } from "components/Utils/GenericWrapper";
-import { urlFor } from "lib/sanity";
 
 import moment from "moment";
 import { useRouter } from "next/router";

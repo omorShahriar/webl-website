@@ -1,13 +1,9 @@
-import styled from "styled-components";
 import { Container, Row, Col, media } from "styled-bootstrap-grid";
 import { PrimaryHeading } from "../../../Typography";
 import { GenericWrapper } from "../../../Utils/GenericWrapper";
-
-import { reasons } from "../../../../assets/seed";
 import ReasonBlock from "./ReasonBlock";
 
 const WhyUsSection = ({ content }) => {
-  console.log(content);
   return (
     <GenericWrapper>
       <Container>

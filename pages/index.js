@@ -18,7 +18,7 @@ export default function Home({ data }) {
     <>
       <HeroSection content={content[0]} />
       <WhyUsSection content={content[1]} />
-      <ServicesSection />
+      <ServicesSection content={content[2]} />
       <ReviewSection />
     </>
   );

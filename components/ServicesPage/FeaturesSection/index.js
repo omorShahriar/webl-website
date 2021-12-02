@@ -8,7 +8,6 @@ import {
   SecondaryBodyText,
 } from "../../Typography";
 import { GenericWrapper } from "../../Utils/GenericWrapper";
-import { Blank } from "../../Utils/Blank";
 import { VerticalSeparator } from "../../Utils/Seperator";
 const Heading = styled(PrimaryHeading)`
   margin-bottom: 1rem;

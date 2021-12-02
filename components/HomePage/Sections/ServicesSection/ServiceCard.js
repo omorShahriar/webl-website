@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { media } from "styled-bootstrap-grid";
-import { BsGearWideConnected, BsFillFlagFill } from "react-icons/bs";
+import * as fa from "react-icons/fa";
+import * as hi from "react-icons/hi";
+import * as md from "react-icons/md";
 import { SecondaryHeading, SecondaryBodyText } from "../../../Typography";
 
 import StyledButton from "../../../StyledButton";
@@ -32,24 +34,40 @@ const IconWrapper = styled.div`
   font-size: 5rem;
 `;
 const Title = styled(SecondaryHeading)`
+  text-align: center;
   ${media.lg` 
         font-size : 1.25rem;
        
     `}
 `;
 const Text = styled(SecondaryBodyText)`
+  text-align: center;
   flex-grow: 1;
 `;
-export const ServiceCard = ({ title, text, slug }) => {
+
+const ServiceIcon = ({ icon }) => {
+  const { name, provider } = icon;
+  let Icon;
+  if (provider == "mdi") {
+    Icon = React.createElement(md[name]);
+  } else if (provider == "fa") {
+    Icon = React.createElement(fa[name]);
+  } else {
+    Icon = React.createElement(hi[name]);
+  }
+
+  return Icon;
+};
+export const ServiceCard = ({ title, description, icon }) => {
   return (
     <Card>
       <IconWrapper>
-        <BsGearWideConnected />
+        <ServiceIcon icon={icon} />
       </IconWrapper>
 
       <Title>{title}</Title>
       <Blank gap="1" />
-      <Text textAlign="center">{text}</Text>
+      <Text textAlign="center">{description}</Text>
       <Blank gap="1.5" />
       <StyledButton href="/services" borderColor="#3CBB95">
         Learn More

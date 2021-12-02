@@ -15,6 +15,7 @@ export default {
       of: [
         { type: "heroSection" },
         { type: "whyUsSection" },
+        { type: "servicesSection" },
         { type: "reviewsSection" },
       ],
     },
