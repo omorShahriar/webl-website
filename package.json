@@ -24,6 +24,7 @@
     "react-icons": "^4.3.1",
     "react-share": "^4.4.0",
     "react-spinners": "^0.11.0",
+    "react-tiny-crossfade": "^2.0.0",
     "sharp": "^0.29.2",
     "styled-bootstrap-grid": "^3.1.1",
     "styled-components": "^5.3.1",

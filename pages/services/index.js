@@ -1,3 +1,12 @@
+import { groq } from "next-sanity";
+import { getClient } from "../../lib/sanity";
+
+const pageQuery = groq`
+  *[_type == "landingPage"][0]{
+  content[2]
+}
+`;
+
 import { NextSeo } from "next-seo";
 import { Container, Row, Col } from "styled-bootstrap-grid";
 import { GenericWrapper } from "../../components/Utils/GenericWrapper";
@@ -8,7 +17,8 @@ import FAQSection from "../../components/ServicesPage/FAQSection";
 
 import { PrimaryHeading } from "../../components/Typography";
 import ServiceBox from "../../components/ServicesPage/ServiceBox";
-const Services = () => {
+
+const Services = ({ data: { content } }) => {
   return (
     <>
       <NextSeo title="Services" />
@@ -16,10 +26,10 @@ const Services = () => {
         <Container>
           <Row>
             <Col>
-              <PrimaryHeading>our services</PrimaryHeading>
+              <PrimaryHeading>{content.heading}</PrimaryHeading>
             </Col>
             <Col lgOffset={1} lg={10}>
-              <ServiceBox />
+              <ServiceBox services={content.services} />
             </Col>
           </Row>
           <Row>
@@ -37,3 +47,14 @@ const Services = () => {
 };
 
 export default Services;
+
+export async function getStaticProps({ preview = false }) {
+  const data = await getClient(preview).fetch(pageQuery);
+
+  return {
+    props: {
+      preview,
+      data,
+    },
+  };
+}

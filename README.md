@@ -1,8 +1,8 @@
 ## Project Documentation
 
-### Stacl used :
+### Stack used :
 
 1. Next js ~ React
 2. Sanity Js ~ CMS
-3. SendGrind ~ Contact Form
+3. Nodemailer ~ Contact Form
 4. Vercel ~ Hosting

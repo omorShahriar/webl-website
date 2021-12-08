@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Container, Row, Col, media } from "styled-bootstrap-grid";
 import { SecondaryHeading } from "../../Typography";
 import StyledButton from "../../StyledButton";
-import { allServices } from "../../../assets/seed";
 import ServiceCard from "./ServiceCard";
 import { Blank } from "../../Utils/Blank";
 
@@ -28,18 +27,18 @@ const CTAWrapper = styled.div`
   justify-content: center;
 `;
 
-const ServiceBox = () => {
+const ServiceBox = ({ services }) => {
   return (
     <>
       <ServiceBoxWrapper>
         <Container>
           <Row>
-            {allServices.map((service, index) => (
+            {services.map((service, index) => (
               <Col md={4} key={index}>
                 <ServiceCard
-                  icon={`/${service.icon}`}
+                  icon={service.icon}
                   title={service.title}
-                  description={service.text}
+                  description={service.description}
                 />
               </Col>
             ))}

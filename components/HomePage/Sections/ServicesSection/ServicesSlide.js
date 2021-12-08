@@ -1,6 +1,7 @@
 import React from "react";
+import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination } from "swiper";
+import SwiperCore, { EffectCoverflow, Pagination, Navigation } from "swiper";
 
 import { Col } from "styled-bootstrap-grid";
 
@@ -9,35 +10,141 @@ import { ServiceCard } from "./ServiceCard";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/effect-coverflow";
 
-import styles from "../../../CustomStyles/customSlideStyle.module.css";
+import styles from "./customSlideStyle.module.css";
 
-SwiperCore.use([Pagination]);
+SwiperCore.use([EffectCoverflow, Pagination, Navigation]);
+
+const StyledSwiperWrapper = styled.div`
+  & .swiper-horizontal > .swiper-pagination-progressbar,
+  .swiper-pagination-progressbar.swiper-pagination-horizontal {
+    position: absolute;
+    width: 75%;
+    height: 2px;
+    right: 0;
+    bottom: 10px;
+    left: auto;
+    top: auto;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  & .swiper-pagination-progressbar-fill {
+    background: #3cbb95;
+  }
+  & .swiper-button-prev {
+    left: 4%;
+    bottom: 0;
+    position: absolute;
+    top: auto;
+    width: 50px;
+    height: 25px;
+    transition: all 0.3s ease-out;
+
+    &:hover:after {
+      color: #3cbb95;
+    }
+    @media screen and (max-width: 991px) {
+      left: 2%;
+    }
+    @media screen and (max-width: 767px) {
+      left: 35%;
+    }
+    @media screen and (max-width: 420px) {
+      left: 25%;
+    }
+  }
+  & .swiper-button-prev:after {
+    transition: all 0.3s ease-out;
+    content: "←";
+    font-size: 3rem;
+    font-family: "poppins sans-serif";
+    color: #424242;
+  }
+
+  & .swiper-button-next {
+    left: 12%;
+    bottom: 0;
+    position: absolute;
+    top: auto;
+    width: 50px;
+    height: 25px;
+    &:hover:after {
+      color: #3cbb95;
+    }
+    @media screen and (max-width: 991px) {
+      left: 12%;
+    }
+    @media screen and (max-width: 767px) {
+      left: auto;
+      right: 35%;
+    }
+    @media screen and (max-width: 420px) {
+      right: 25%;
+    }
+  }
+  & .swiper-button-next:after {
+    transition: all 0.3s ease-out;
+    content: "→";
+    font-size: 3rem;
+    font-family: "poppins sans-serif";
+    color: #424242;
+  }
+`;
 
 export const ServiceSlides = ({ services }) => {
   return (
     <Col>
-      <Swiper
-        spaceBetween={50}
-        slidesPerView={1}
-        loop={true}
-        pagination={{
-          dynamicBullets: true,
-        }}
-        className={styles.swiper}
-      >
-        {services.map((service, index) => {
-          return (
-            <SwiperSlide key={index}>
-              <ServiceCard
-                title={service.title}
-                description={service.description}
-                icon={service.icon}
-              />
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
+      <StyledSwiperWrapper>
+        <Swiper
+          // effect={"coverflow"}
+          centeredSlides={true}
+          navigation={true}
+          // coverflowEffect={{
+          //   rotate: 0,
+          //   stretch: 0,
+          //   depth: 200,
+          //   modifier: 2,
+          //   slideShadows: false,
+          // }}
+          slidesPerView="auto"
+          spaceBetween={50}
+          pagination={{
+            type: "progressbar",
+          }}
+          // breakpoints={{
+          //   768: {
+          //     slidesPerView: 3,
+          //     spaceBetween: 30,
+          //   },
+          //   1024: {
+          //     slidesPerView: 4,
+          //     spaceBetween: 40,
+          //   },
+          //   1280: {
+          //     slidesPerView: 5,
+          //     spaceBetween: 50,
+          //   },
+          // }}
+          className={styles.swiper}
+        >
+          {services.map((service, index) => {
+            return (
+              <SwiperSlide key={index} className={` ${styles["swiper-slide"]}`}>
+                {({ isActive }) => (
+                  <ServiceCard
+                    title={service.title}
+                    icon={service.icon}
+                    isActive={isActive}
+                    description={service.description}
+                  />
+                )}
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </StyledSwiperWrapper>
     </Col>
   );
 };

@@ -4685,6 +4685,18 @@ react-spinners@^0.11.0:
   dependencies:
     "@emotion/react" "^11.1.4"
 
+react-tiny-crossfade@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-tiny-crossfade/-/react-tiny-crossfade-2.0.0.tgz#c2b0e62fc329c7a2cb1a77d813c11f71fa456132"
+  integrity sha512-B2HH1mZdwHcS/R0k/qzwKV9zBHJiVU4M1o7TG7m7JAShgCYlqvC+2IofmgJe+DAo0gNAkKet7iaD4dsx9142AA==
+  dependencies:
+    react-tiny-transition "^2.1.8"
+
+react-tiny-transition@^2.1.8:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/react-tiny-transition/-/react-tiny-transition-2.4.0.tgz#083af60aef5b93ae8c46f896a0b00a3ac0656a4b"
+  integrity sha512-QhRlbTSV+cJUL2DjtOc8BHhp9iwo57WEmC/Thj3zqifhV8MViyC0XupM2aPqCODrVkBk8ImKzZZhRstlnsRUAg==
+
 react-transition-group@^4.4.1:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-4.4.2.tgz#8b59a56f09ced7b55cbd53c36768b922890d5470"
