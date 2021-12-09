@@ -1,4 +1,5 @@
 import React from "react";
+
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { EffectCoverflow, Pagination, Navigation } from "swiper";
@@ -93,7 +94,7 @@ const StyledSwiperWrapper = styled.div`
   }
 `;
 
-export const ServiceSlides = ({ services }) => {
+const ServiceSlides = ({ services }) => {
   return (
     <Col>
       <StyledSwiperWrapper>
@@ -148,3 +149,4 @@ export const ServiceSlides = ({ services }) => {
     </Col>
   );
 };
+export default ServiceSlides;

@@ -77,7 +77,7 @@ export const footerLinks = [
     slug: "/services",
   },
   {
-    name: "about us",
+    name: "About Us",
     slug: "/about-us",
   },
   {
@@ -207,5 +207,56 @@ export const faqs = [
     question: "how much does it cost?",
     answer:
       "Blanditiis aliquid adipisci quisquam reiciendis voluptates itaque.",
+  },
+];
+
+export const members = [
+  {
+    picture: "/team-pic/ocean_vai.jpg",
+    name: "Shahriar Ferdous",
+    designation: "Head of Sales and Client Services",
+  },
+  {
+    picture: "/team-pic/easha_apu.jpg",
+    name: "Fatima Tasnim Easha",
+    designation: "Head of Operations",
+  },
+  {
+    picture: "/team-pic/aashab_vai.jpg",
+    name: "Aashab Tajwar Khan",
+    designation: "Head of Technology",
+  },
+];
+
+export const stories = [
+  {
+    image: "/story-image/st-1.jpg",
+    title: "Best e-learning model and Best bespoke e-learning",
+    details:
+      "Thrilled in 2014 when we won 2 LearnX awards with Santos. They are still a client today.",
+  },
+  {
+    image: "/story-image/st-2.jpg",
+    title: "Articulate Conferences New York & Barcelona",
+    details:
+      "We've had the pleasure of attending Articulate conferences, the global industry leader, which were transforming and inspiring.",
+  },
+  {
+    image: "/story-image/st-3.jpg",
+    title: "Multi Award Winners",
+    details:
+      "Recognised as industry best 15 times. Our first award was with Sydney Airport in 2008 for Best LMS solution. They are still a client today.",
+  },
+  {
+    image: "/story-image/st-4.jpg",
+    title: "3X Award Winners",
+    details:
+      "Winning 3X LearnX awards in 2015 for best LMS, best eLearning adopter and best eLearning project.",
+  },
+  {
+    image: "/story-image/st-5.jpg",
+    title: "We celebrate 10 years",
+    details:
+      "The Insight Conference & Cocktail Party was held in 2016 with clients and friends.",
   },
 ];

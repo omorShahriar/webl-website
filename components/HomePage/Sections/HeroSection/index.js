@@ -32,11 +32,12 @@ const HeroWrapper = styled.div`
 `;
 
 const HeroHeading = styled.h1`
-  color: #424242;
+  color: #000;
   font-weight: bold;
   font-size: 2.5rem;
   text-align: center;
   margin-top: 2rem;
+  margin-bottom: 1rem;
   ${media.md`
         margin-top: 1rem;
         font-size : 2.75rem;
@@ -45,6 +46,7 @@ const HeroHeading = styled.h1`
   ${media.lg`
         text-align: left;
         font-size : 3rem;
+        line-height:3.25rem;
       
     `}
 `;

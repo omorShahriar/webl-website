@@ -14,7 +14,7 @@ import styles from "./customSlideStyle.module.css";
 
 SwiperCore.use([Pagination, Autoplay]);
 
-export const ReviewsSlide = () => {
+const ReviewsSlide = () => {
   return (
     <Col>
       <Swiper
@@ -42,3 +42,5 @@ export const ReviewsSlide = () => {
     </Col>
   );
 };
+
+export default ReviewsSlide;
