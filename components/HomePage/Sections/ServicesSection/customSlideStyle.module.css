@@ -13,5 +13,7 @@
   width: 250px;
   height: 250px;
   background: #fff;
+  border-radius: 25px;
+  overflow: hidden;
   box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
 }

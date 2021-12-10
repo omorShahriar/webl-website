@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
 import TinyCrossfade from "react-tiny-crossfade";
 import styled from "styled-components";
-import { media } from "styled-bootstrap-grid";
-import * as fa from "react-icons/fa";
-import * as hi from "react-icons/hi";
-import * as md from "react-icons/md";
-import { SecondaryHeading, SecondaryBodyText } from "../../../Typography";
 
 const Card = styled.div`
   box-sizing: border-box;
   padding: 2rem 0.5rem;
+
   width: 100%;
   display: flex;
   height: 100%;
@@ -44,40 +40,21 @@ const InnerBox = styled.div`
   align-items: center;
 `;
 
-const IconWrapper = styled.div`
-  color: #3cbb95;
-  font-size: 3rem;
-`;
-const Title = styled(SecondaryHeading)`
+const Title = styled.h3`
   text-align: center;
-
-  ${media.lg` 
-        font-size : 1.25rem;
-       
-    `}
+  font-weight: 500;
+  font-size: 1.25rem;
 `;
 
-const Description = styled(SecondaryBodyText)`
+const Description = styled.p`
   text-align: center;
   transition: all 0.3s ease-out;
-  ${media.lg` 
-        font-size : 1.25rem;
-       
-    `}
+  font-size: 1rem;
+  color: #424242;
 `;
 
 const ServiceIcon = ({ icon }) => {
-  const { name, provider } = icon;
-  let Icon;
-  if (provider == "mdi") {
-    Icon = React.createElement(md[name]);
-  } else if (provider == "fa") {
-    Icon = React.createElement(fa[name]);
-  } else {
-    Icon = React.createElement(hi[name]);
-  }
-
-  return Icon;
+  return <div dangerouslySetInnerHTML={{ __html: icon }}></div>;
 };
 
 export const ServiceCard = ({ title, icon, isActive, description }) => {
@@ -103,9 +80,8 @@ export const ServiceCard = ({ title, icon, isActive, description }) => {
           </InnerBox>
         ) : (
           <InnerBox key="title">
-            <IconWrapper>
-              <ServiceIcon icon={icon} />
-            </IconWrapper>
+            <ServiceIcon icon={icon} />
+
             <Title>{title}</Title>
           </InnerBox>
         )}

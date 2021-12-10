@@ -6,10 +6,8 @@ export default {
     {
       title: "Icon",
       name: "icon",
-      type: "iconPicker",
-      options: {
-        outputFormat: "react",
-      },
+      type: "text",
+      validation: (Rule) => Rule.required().min(2),
     },
     {
       name: "title",

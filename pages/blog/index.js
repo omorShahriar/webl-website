@@ -13,7 +13,6 @@ import {
 } from "../../components/BlogsPage/LoadMore";
 import { PrimaryHeading, SecondaryHeading } from "../../components/Typography";
 
-import PreviewAlert from "../../components/BlogsPage/PreviewAlert";
 import CardItem from "../../components/BlogsPage/CardItem";
 
 export const BlogList = ({ data = [] }) => {

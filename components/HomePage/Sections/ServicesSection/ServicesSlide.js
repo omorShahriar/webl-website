@@ -99,35 +99,13 @@ const ServiceSlides = ({ services }) => {
     <Col>
       <StyledSwiperWrapper>
         <Swiper
-          // effect={"coverflow"}
           centeredSlides={true}
           navigation={true}
-          // coverflowEffect={{
-          //   rotate: 0,
-          //   stretch: 0,
-          //   depth: 200,
-          //   modifier: 2,
-          //   slideShadows: false,
-          // }}
           slidesPerView="auto"
           spaceBetween={50}
           pagination={{
             type: "progressbar",
           }}
-          // breakpoints={{
-          //   768: {
-          //     slidesPerView: 3,
-          //     spaceBetween: 30,
-          //   },
-          //   1024: {
-          //     slidesPerView: 4,
-          //     spaceBetween: 40,
-          //   },
-          //   1280: {
-          //     slidesPerView: 5,
-          //     spaceBetween: 50,
-          //   },
-          // }}
           className={styles.swiper}
         >
           {services.map((service, index) => {

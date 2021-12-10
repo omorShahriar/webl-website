@@ -17,6 +17,7 @@ const StyledSwiperWrapper = styled.div`
   }
   & .swiper-button-prev,
   & .swiper-button-next {
+    -webkit-tap-highlight-color: transparent;
     position: absolute;
     bottom: 0;
     top: auto;

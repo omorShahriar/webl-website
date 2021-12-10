@@ -18,7 +18,6 @@ import { useRouter } from "next/router";
 
 import BlogHeader from "components/BlogsPage/BlogHeader";
 import BlogContent from "components/BlogsPage/BlogContent";
-import PreviewAlert from "components/BlogsPage/PreviewAlert";
 
 const BlogDetail = ({ blog: initialBlog, preview, error }) => {
   const router = useRouter();
