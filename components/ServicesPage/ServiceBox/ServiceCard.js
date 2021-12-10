@@ -6,21 +6,26 @@ const ServiceCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.75rem;
   margin-bottom: 2rem;
   ${media.md`
         align-items : flex-start;
         margin-bottom: 4rem;
     `}
 `;
-const Title = styled(SecondaryHeading)`
+const Title = styled.h3`
+  font-weight: 500;
+  font-size: 1rem;
   text-align: center;
   ${media.md`
                 text-align:left;
             `}
 `;
 
-const Description = styled(SecondaryBodyText)`
+const Description = styled.p`
   text-align: center;
+  font-size: 0.75rem;
+  color: #424242;
   ${media.md`
             text-align:left;
         `}
@@ -33,7 +38,6 @@ const ServiceCard = ({ icon, title, description }) => {
   return (
     <ServiceCardWrapper>
       <ServiceIcon icon={icon} />
-
       <Title>{title}</Title>
       <Description>{description}</Description>
     </ServiceCardWrapper>

@@ -15,38 +15,37 @@ const Wrapper = styled.div`
   }
 `;
 const DP = styled.div`
-  position: relative;
-  width: 170px;
-  height: 170px;
-
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
-    border: 3px solid #ffa400;
-    border-radius: 50%;
-    width: 170px;
-    height: 170px;
-  }
+  padding: 0.25rem;
+  border-radius: 50%;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    45deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
 `;
 const RoundBox = styled.div`
-  width: 150px;
-  height: 150px;
+  padding: 0.25rem;
+  background: #fff;
   border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto;
-  transform: translateY(10px);
+`;
+
+const Image = styled.img`
+  object-fit: cover;
+  object-position: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
 `;
 const People = ({ member }) => {
   return (
     <Wrapper>
       <DP>
         <RoundBox>
-          <img src={member.picture} />
+          <Image src={member.picture} />
         </RoundBox>
       </DP>
+
       <h3>{member.name}</h3>
       <p>{member.designation}</p>
     </Wrapper>

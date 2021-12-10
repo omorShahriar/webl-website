@@ -108,6 +108,28 @@ const TheTeamBox = styled.div`
   padding-top: 6rem;
 `;
 
+const ElementSquareBox = () => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 52 52"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="1.6"
+        y="5.5"
+        width="45"
+        height="45"
+        rx="8.5"
+        transform="rotate(-5 1.6 5.5)"
+        stroke="#3CBB95"
+        strokeWidth="3"
+      />
+    </svg>
+  );
+};
 const About = () => {
   return (
     <>
@@ -130,23 +152,23 @@ const About = () => {
               </SecondaryBodyText>
               <ElementList>
                 <Element>
-                  <img src="/ElementSquareBox.svg" width="24px" height="24px" />
+                  <ElementSquareBox />
                   smart technology
                 </Element>
                 <Element>
-                  <img src="/ElementSquareBox.svg" width="24px" height="24px" />
+                  <ElementSquareBox />
                   quality content
                 </Element>
                 <Element>
-                  <img src="/ElementSquareBox.svg" width="24px" height="24px" />
+                  <ElementSquareBox />
                   practical tools
                 </Element>
                 <Element>
-                  <img src="/ElementSquareBox.svg" width="24px" height="24px" />
+                  <ElementSquareBox />
                   expert guidance
                 </Element>
                 <Element>
-                  <img src="/ElementSquareBox.svg" width="24px" height="24px" />
+                  <ElementSquareBox />
                   community support
                 </Element>
               </ElementList>
