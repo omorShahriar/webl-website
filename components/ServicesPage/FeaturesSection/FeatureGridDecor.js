@@ -6,7 +6,19 @@ const Wrapper = styled.div`
   right: 0;
   bottom: 0;
   position: absolute;
-  z-index: -99;
+  & #top-left,
+  #top-right,
+  #bottom-left,
+  #bottom-right,
+  #left-orange,
+  #right-orange,
+  #orangeTriangle,
+  #yelloTriangle,
+  #greenTriangle,
+  #leftBoxOutLineWCirc,
+  #rightBoxOutLineWCirc {
+    z-index: -100;
+  }
   & #top-left {
     position: absolute;
     top: -4%;
@@ -37,16 +49,7 @@ const Wrapper = styled.div`
     bottom: 25%;
     right: 20%;
   }
-  & #left-spiral {
-    position: absolute;
-    top: 29%;
-    left: -9%;
-  }
-  & #right-spiral {
-    position: absolute;
-    bottom: 26%;
-    right: -8%;
-  }
+
   & #orangeTriangle {
     position: absolute;
     top: -10%;
@@ -62,8 +65,180 @@ const Wrapper = styled.div`
     bottom: -1%;
     left: 44%;
   }
+  & #leftBoxOutLineWCirc,
+  & #rightBoxOutLineWCirc {
+    position: absolute;
+  }
+  & #leftBoxOutLineWCirc {
+    bottom: 32%;
+    left: 1%;
+    z-index: 1;
+  }
+  & #rightBoxOutLineWCirc {
+    top: 31%;
+    right: 1%;
+    z-index: 1;
+  }
+  @media screen and (min-width: 1200px) {
+    & #leftBoxOutLineWCirc {
+      bottom: 32.5%;
+      left: 8%;
+    }
+    & #rightBoxOutLineWCirc {
+      top: 31%;
+      right: 8%;
+    }
+
+    & #top-left {
+      top: -5%;
+      left: 11%;
+    }
+    & #top-right {
+      top: 5%;
+      right: 10%;
+    }
+
+    & #bottom-left {
+      bottom: 5%;
+      left: 11%;
+    }
+    & #bottom-right {
+      bottom: -5%;
+      right: 11%;
+    }
+    & #left-orange {
+      top: 20%;
+      left: 23%;
+    }
+    & #right-orange {
+      bottom: 20%;
+      right: 25%;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    & #leftBoxOutLineWCirc,
+    & #rightBoxOutLineWCirc {
+      visibility: hidden;
+    }
+    & #top-left {
+      top: -5%;
+      left: -6%;
+    }
+    & #top-right {
+      top: 5%;
+      right: -7%;
+    }
+
+    & #bottom-left {
+      bottom: 5%;
+      left: -7%;
+    }
+    & #bottom-right {
+      bottom: -5%;
+      right: -7%;
+    }
+    & #left-orange {
+      top: 21%;
+      left: 7%;
+    }
+    & #right-orange {
+      bottom: 18%;
+      right: 11%;
+    }
+    & #yellowTriangle {
+      top: 1%;
+      right: 21%;
+    }
+    & #greenTriangle {
+      bottom: 0%;
+      left: 35%;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    & #top-left {
+      top: -2%;
+      left: -8%;
+    }
+  }
 `;
 
+const LeftBoxOutLineWCirc = (props) => {
+  return (
+    <svg
+      width={130}
+      height={125}
+      viewBox="0 0 130 125"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <rect
+        opacity={0.4}
+        x={27.6}
+        y={32.2}
+        width={69.6}
+        height={70.1}
+        rx={8.5}
+        stroke="#FFA400"
+        strokeWidth={3}
+      />
+      <ellipse
+        opacity={0.4}
+        cx={26.1}
+        cy={98.3}
+        rx={26.1}
+        ry={26.7}
+        fill="#006661"
+      />
+      <ellipse
+        opacity={0.4}
+        cx={94.4}
+        cy={35.8}
+        rx={35.6}
+        ry={35.8}
+        fill="#FF912B"
+      />
+    </svg>
+  );
+};
+const RightBoxOutLineWCirc = (props) => {
+  return (
+    <svg
+      width={130}
+      height={125}
+      viewBox="0 0 130 125"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <rect
+        opacity={0.4}
+        x={-1.5}
+        y={1.5}
+        width={69.6}
+        height={70.1}
+        rx={8.5}
+        transform="matrix(-1 0 0 1 100.9 30.7)"
+        stroke="#FFA400"
+        strokeWidth={3}
+      />
+      <ellipse
+        opacity={0.4}
+        rx={26.1}
+        ry={26.7}
+        transform="matrix(-1 0 0 1 103.9 98.3)"
+        fill="#006661"
+      />
+      <ellipse
+        opacity={0.4}
+        rx={35.6}
+        ry={35.8}
+        transform="matrix(-1 0 0 1 35.6 35.8)"
+        fill="#FF912B"
+      />
+    </svg>
+  );
+};
 const BoxWBorder = (props) => {
   return (
     <svg
@@ -137,61 +312,6 @@ const OrangeDecor = (props) => {
   );
 };
 
-const GreenSpiralLeft = (props) => {
-  return (
-    <svg
-      width={186}
-      height={186}
-      viewBox="0 0 186 186"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        opacity={0.6}
-        d="M11.2 177.2C.7 154.9.5 135.7 21 123.2c10.3-6.2 19.4 4 30-3.8C71.3 104 58.3 56.3 93.1 60c8.7.9 11.4 12 21.7 11.7 13-.5 19-20.6 21.7-30.5 3.5-12.6 6.8-24.4 16.3-33.9C163.3-3 175.2 13 182.3 20.1"
-        stroke="#3CBB95"
-        strokeWidth={7}
-        strokeLinecap="round"
-      />
-      <path
-        opacity={0.6}
-        d="M27.6 181.9c-.6-3.4-7.6-32.3 2.3-32.8 8.5-.5 16-2.4 24.8-2.4 31 0 17.5-42.7 38.5-54.4a47.9 47.9 0 0 1 28.2-6.6c7 .5 15.4 5.1 23.4 1 12-5.9 13-22.2 17.6-32.5 4.3-9.4 9.8-8.3 20-8.3"
-        stroke="#3CBB95"
-        strokeWidth={7}
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-};
-const GreenSpiralRight = (props) => {
-  return (
-    <svg
-      width={184}
-      height={186}
-      viewBox="0 0 184 186"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        opacity={0.6}
-        d="M173.2 177.3c10.4-22.3 10.6-41.5-9.8-54-10.2-6.2-19.1 4-29.6-3.9-20.1-15.3-7.3-63-41.7-59.4-8.5 1-11.2 12.1-21.4 11.7-12.9-.5-18.8-20.5-21.5-30.4-3.5-12.6-6.7-24.4-16-33.9C22.7-3 11 13 4 20.2"
-        stroke="#3CBB95"
-        strokeWidth={7}
-        strokeLinecap="round"
-      />
-      <path
-        opacity={0.6}
-        d="M156.8 182c.6-3.4 7.5-32.3-2.3-32.9-8.4-.5-15.8-2.3-24.5-2.3-30.6 0-17.2-42.8-38-54.5a46.8 46.8 0 0 0-27.8-6.5c-7 .4-15.2 5.1-23.2 1-11.8-6-12.7-22.2-17.3-32.5C19.4 44.8 14 46 4 46"
-        stroke="#3CBB95"
-        strokeWidth={7}
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-};
-
 const OrangeTriangle = (props) => {
   return (
     <svg
@@ -255,8 +375,8 @@ const FeatureGridDecor = () => {
       <Box id="bottom-right" />
       <OrangeDecor id="left-orange" />
       <OrangeDecor id="right-orange" />
-      <GreenSpiralLeft id="left-spiral" />
-      <GreenSpiralRight id="right-spiral" />
+      <LeftBoxOutLineWCirc id="leftBoxOutLineWCirc"></LeftBoxOutLineWCirc>
+      <RightBoxOutLineWCirc id="rightBoxOutLineWCirc"></RightBoxOutLineWCirc>
       <OrangeTriangle id="orangeTriangle" />
       <YellowTriangle id="yellowTriangle" />
       <GreenTriangle id="greenTriangle" />
