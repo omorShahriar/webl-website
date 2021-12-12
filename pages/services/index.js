@@ -1,12 +1,5 @@
 import { groq } from "next-sanity";
 import { getClient } from "../../lib/sanity";
-
-const pageQuery = groq`
-  *[_type == "landingPage"][0]{
-  content[2]
-}
-`;
-
 import { NextSeo } from "next-seo";
 import { Container, Row, Col } from "styled-bootstrap-grid";
 import { GenericWrapper } from "../../components/Utils/GenericWrapper";
@@ -18,7 +11,18 @@ import FAQSection from "../../components/ServicesPage/FAQSection";
 import { PrimaryHeading } from "../../components/Typography";
 import ServiceBox from "../../components/ServicesPage/ServiceBox";
 
-const Services = ({ data: { content } }) => {
+const pageQuery = groq`
+  *[_type == "page" && title == "Services"][0]{
+  "process" : content[0],
+  "service": *[_id == "landingPage"][0].content[2]{
+   heading,
+  services
+}
+
+}
+`;
+
+const Services = ({ data }) => {
   return (
     <>
       <NextSeo title="Services" />
@@ -26,17 +30,17 @@ const Services = ({ data: { content } }) => {
         <Container>
           <Row>
             <Col>
-              <PrimaryHeading>{content.heading}</PrimaryHeading>
+              <PrimaryHeading>{data.service.heading}</PrimaryHeading>
             </Col>
             <Col lgOffset={1} lg={10}>
-              <ServiceBox services={content.services} />
+              <ServiceBox services={data.service.services} />
             </Col>
           </Row>
           <Row>
             <Col>
               <Approach />
               <FeaturesSection />
-              <ProcessSection />
+              <ProcessSection process={data.process} />
               <FAQSection />
             </Col>
           </Row>

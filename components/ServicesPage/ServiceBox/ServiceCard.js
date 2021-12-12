@@ -15,7 +15,7 @@ const ServiceCardWrapper = styled.div`
 `;
 const Title = styled.h3`
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
   ${media.md`
                 text-align:left;
@@ -24,7 +24,7 @@ const Title = styled.h3`
 
 const Description = styled.p`
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: #424242;
   ${media.md`
             text-align:left;

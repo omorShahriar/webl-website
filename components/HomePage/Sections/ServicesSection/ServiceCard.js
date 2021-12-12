@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import TinyCrossfade from "react-tiny-crossfade";
 import styled from "styled-components";
 
@@ -12,10 +12,10 @@ const Card = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease-out;
+  transition: all 0.2s ease-out;
   transform: ${({ isActive }) => isActive && "translateY(-15px)"};
   & .transition-wrapper {
-    transition: height 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+    transition: height 0.2s ease-out;
     overflow: hidden;
   }
   & .before-enter {
@@ -23,14 +23,14 @@ const Card = styled.div`
   }
   & .entering {
     opacity: 1;
-    transition: opacity 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+    transition: opacity 0.2s ease-out;
   }
   & .before-leave {
     opacity: 1;
   }
   & .leaving {
     opacity: 0;
-    transition: opacity 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+    transition: opacity 0.2s ease-in;
   }
 `;
 
@@ -57,27 +57,42 @@ const ServiceIcon = ({ icon }) => {
   return <div dangerouslySetInnerHTML={{ __html: icon }}></div>;
 };
 
+const ServiceDescription = ({ description, flipped, setFlipped }) => {
+  const ref = useRef();
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      if (flipped && ref.current && !ref.current.contains(e.target)) {
+        setFlipped(false);
+      }
+    };
+
+    document.addEventListener("click", checkIfClickedOutside);
+
+    return () => {
+      document.removeEventListener("click", checkIfClickedOutside);
+    };
+  }, [flipped]);
+  return (
+    <InnerBox ref={ref}>
+      <Description key="description">{description}</Description>
+    </InnerBox>
+  );
+};
 export const ServiceCard = ({ title, icon, isActive, description }) => {
   const [flipped, setFlipped] = useState(false);
-  useEffect(() => {
-    if (!isActive) {
-      setFlipped(false);
-    }
-  }, [isActive]);
+
   return (
-    <Card
-      isActive={isActive}
-      onClick={() => setFlipped(!flipped)}
-      onBlur={() => setFlipped(false)}
-    >
+    <Card isActive={isActive} onClick={() => setFlipped(!flipped)}>
       <TinyCrossfade
         disableInitialAnimation={true}
         className="transition-wrapper"
       >
         {flipped ? (
-          <InnerBox>
-            <Description key="description">{description}</Description>
-          </InnerBox>
+          <ServiceDescription
+            description={description}
+            flipped={flipped}
+            setFlipped={setFlipped}
+          />
         ) : (
           <InnerBox key="title">
             <ServiceIcon icon={icon} />

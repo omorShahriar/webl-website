@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import MoonLoader from "react-spinners/ClipLoader";
 
 export const LoadMore = styled.button`
   border: 3px solid #3cbb95;
@@ -20,5 +19,3 @@ export const LoadMoreContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
-export const Spinner = styled(MoonLoader)``;

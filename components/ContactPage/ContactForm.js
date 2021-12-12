@@ -9,7 +9,7 @@ import {
 } from "./StyledFormElements";
 import toast, { Toaster } from "react-hot-toast";
 import { useState } from "react";
-import { MoonLoader } from "react-spinners";
+import Spinner from "components/Spinner";
 
 const notify = (message, success) =>
   success ? toast.success(message) : toast.error(message);
@@ -176,8 +176,9 @@ const ContactForm = () => {
         <Button disabled={loading} loading={loading ? "true" : ""}>
           Send
         </Button>
-        {loading && <MoonLoader color="#3CBB95" size={16} />}
+        {loading && <Spinner />}
       </ButtonBox>
+
       <Toaster />
     </Form>
   );

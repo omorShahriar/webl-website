@@ -1,67 +1,54 @@
 import styled from "styled-components";
-import Image from "next/image";
+
 import { media } from "styled-bootstrap-grid";
 import { SecondaryHeading, SecondaryBodyText } from "../../Typography";
+import CustomIcon from "components/CustomIcon";
 
 const Title = styled(SecondaryHeading)`
-    text-align: center;
-    border: 3px solid #3CBB95;
-    border-radius : 15px;
-    margin:0 auto;
-    margin-bottom : 1rem;
-    background: #fff;
-    width:50%;
-    ${
-    media.md`
-        margin-bottom : 3rem;
+  text-align: center;
+  border: 3px solid #3cbb95;
+  border-radius: 15px;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  background: #fff;
+  font-weight: 500;
+  width: 50%;
+  ${media.md`
+        margin-bottom : 1.25rem;
         padding: .25rem 1rem;
         width:100%;
-        font-size : 1.5rem;
+        font-size : 1.25rem;
          
-    `
-    }
-`
+    `}
+`;
 const Description = styled(SecondaryBodyText)`
-        font-size: .75rem;
-        text-align: center;
-        ${
-    media.md`
-        font-size: 1.2rem;
+  font-size: 0.75rem;
+  text-align: center;
+  font-weight: 300;
+  ${media.md`
+        font-size: 1rem;
          
-    `
-    }
-      
-`
+    `}
+`;
 const ProcessWrapper = styled.div`
-    margin-bottom: 5rem;
-    ${
-    media.xl`
+  margin-bottom: 5rem;
+  ${media.xl`
          padding: 1rem 1.5rem;
     padding-left: 0;
          
-    `
-    }
-   
-`
-const ProcessIcon = styled.div`
-    width: 3rem;
-    height: 3rem;
-    margin : 0 auto;
-    margin-bottom: 1.5rem;
-`
+    `}
+`;
 
-const Process = ({icon,title,text}) => {
-    return (
-        <ProcessWrapper>
-            <Title>{title}</Title>
-                <ProcessIcon>
-                <Image src={icon} width={48} height={48} layout="responsive" />
-                </ProcessIcon>
-            <Description>
-                {text}
-            </Description>
-        </ProcessWrapper>
-    )
-}
+const Process = ({ icon, title, description }) => {
+  return (
+    <ProcessWrapper>
+      <Title>{title}</Title>
 
-export default Process
+      <CustomIcon icon={icon} />
+
+      <Description>{description}</Description>
+    </ProcessWrapper>
+  );
+};
+
+export default Process;

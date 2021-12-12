@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { NextSeo } from "next-seo";
 
-import MoonLoader from "react-spinners/ClipLoader";
+import Spinner from "components/Spinner";
 import { sanityImageProps } from "lib/sanity";
 
 import {
@@ -42,7 +42,7 @@ const BlogDetail = ({ blog: initialBlog, preview, error }) => {
   if (router.isFallback) {
     return (
       <GenericWrapper>
-        <MoonLoader size={60} />
+        <Spinner />
       </GenericWrapper>
     );
   }

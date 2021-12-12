@@ -1,5 +1,4 @@
 import React from "react";
-import { urlFor } from "../../../../lib/sanity";
 import Image from "next/image";
 import styled from "styled-components";
 import { Container, Row, Col, media } from "styled-bootstrap-grid";

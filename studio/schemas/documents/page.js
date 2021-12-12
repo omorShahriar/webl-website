@@ -31,6 +31,7 @@ export default {
         { type: "heroSection" },
         { type: "imageSection" },
         { type: "textSection" },
+        { type: "itemListSection" },
       ],
     },
     {

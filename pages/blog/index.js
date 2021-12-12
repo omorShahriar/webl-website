@@ -9,8 +9,9 @@ import { GenericWrapper } from "../../components/Utils/GenericWrapper";
 import {
   LoadMore,
   LoadMoreContainer,
-  Spinner,
 } from "../../components/BlogsPage/LoadMore";
+import Spinner from "components/Spinner";
+
 import { PrimaryHeading, SecondaryHeading } from "../../components/Typography";
 
 import CardItem from "../../components/BlogsPage/CardItem";
@@ -57,7 +58,7 @@ export default function BlogPage({ blogs, preview }) {
                     {hitEnd ? (
                       <SecondaryHeading>No more posts yet!</SecondaryHeading>
                     ) : isFetchingNextPage ? (
-                      <Spinner color="#3CBB95" size={48} />
+                      <Spinner />
                     ) : (
                       <LoadMore
                         onClick={() => setSize(size + 1)}

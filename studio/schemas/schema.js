@@ -18,6 +18,8 @@ import testimonial from "./objects/testimonial";
 import imageSection from "./objects/imageSection";
 import textSection from "./objects/textSection";
 
+import itemListSection from "./objects/itemListSection";
+import item from "./objects/item";
 import simplePortableText from "./objects/simplePortableText";
 import portableText from "./objects/portableText";
 import link from "./objects/link";
@@ -41,6 +43,8 @@ export default createSchema({
     service,
     reviewsSection,
     testimonial,
+    itemListSection,
+    item,
     imageSection,
     textSection,
     link,

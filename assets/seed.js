@@ -128,40 +128,37 @@ export const allServices = [
 ];
 
 export const features = [
-  [
-    {
-      icon: "feature-icons/Frame 75.svg",
-      title: "Total Solution",
-      text: "Our team has a range of skills and experience to provide a total solution aligned to adult learning principles - instructional design, graphic design, Articulate development, copy and script writing, LMS deployment.",
-    },
-    {
-      icon: "feature-icons/Frame 76.svg",
-      title: "Audio",
-      text: "Give your content that professional sound with one of our voice talents and increase learner attention. Choose from our range of voice talents to suit your audience.",
-    },
-    {
-      icon: "feature-icons/lucide_gem.svg",
-      title: "Screen Simulations",
-      text: "Screen capture simulations are ideal to promote a new app to your team. We show learners how to complete a task, allow them to try it themselves also test their knowledge.",
-    },
-  ],
-  [
-    {
-      icon: "feature-icons/lucide_gitlab.svg",
-      title: "Articulate tools",
-      text: "Non commodo odio in morbi quis molestie. Neque, eu felis est interdum in faucibus feugiat in commodo. ",
-    },
-    {
-      icon: "feature-icons/lucide_highlighter.svg",
-      title: "VIDEO",
-      text: "Euismod etiam a donec sit sed ullamcorper sit. Amet porta sem enim rhoncus.",
-    },
-    {
-      icon: "feature-icons/lucide_verified.svg",
-      title: "Scenarios",
-      text: "Magnis aenean donec faucibus ac eget. Viverra massa nec aenean magna massa malesuada. At ipsum maecenas neque, cras. Vestibulum sed felis eget mi.",
-    },
-  ],
+  {
+    icon: "feature-icons/Frame 75.svg",
+    title: "Total Solution",
+    text: "Our team has a range of skills and experience to provide a total solution aligned to adult learning principles - instructional design, graphic design, Articulate development, copy and script writing, LMS deployment.",
+  },
+  {
+    icon: "feature-icons/Frame 76.svg",
+    title: "Audio",
+    text: "Give your content that professional sound with one of our voice talents and increase learner attention. Choose from our range of voice talents to suit your audience.",
+  },
+  {
+    icon: "feature-icons/lucide_gem.svg",
+    title: "Screen Simulations",
+    text: "Screen capture simulations are ideal to promote a new app to your team. We show learners how to complete a task, allow them to try it themselves also test their knowledge.",
+  },
+
+  {
+    icon: "feature-icons/lucide_gitlab.svg",
+    title: "Articulate tools",
+    text: "Non commodo odio in morbi quis molestie. Neque, eu felis est interdum in faucibus feugiat in commodo. ",
+  },
+  {
+    icon: "feature-icons/lucide_highlighter.svg",
+    title: "VIDEO",
+    text: "Euismod etiam a donec sit sed ullamcorper sit. Amet porta sem enim rhoncus.",
+  },
+  {
+    icon: "feature-icons/lucide_verified.svg",
+    title: "Scenarios",
+    text: "Magnis aenean donec faucibus ac eget. Viverra massa nec aenean magna massa malesuada. At ipsum maecenas neque, cras. Vestibulum sed felis eget mi.",
+  },
 ];
 
 export const processes = [

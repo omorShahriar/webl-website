@@ -1,77 +1,58 @@
 import styled from "styled-components";
 
-import {  Row, Col, media } from "styled-bootstrap-grid";
-import { PrimaryHeading } from "../../Typography"
-import { GenericWrapper } from "../../Utils/GenericWrapper"
+import { Row, Col, media } from "styled-bootstrap-grid";
+import { SecondaryHeading } from "../../Typography";
 
-import { processes } from "../../../assets/seed"
 import Process from "./Process";
 
-const Heading = styled(PrimaryHeading)`
-        ${
-            media.md`
-                text-align: left;
-            `
-        }
-            
-`
-
-          
-
 const ProcessBox = styled.div`
-    position: relative;
-    &::after {
-        content:'';
-        position:absolute;
-        top:5%;
-        left:0;
-        height:3px;
-        display:none;
-        background: #3CBB95;
-        width:80%;
-        z-index: -1;
-        ${
-            media.md`
+  margin-top: 2rem;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 0;
+    height: 3px;
+    display: none;
+    background: #3cbb95;
+    width: 80%;
+    z-index: -1;
+    ${media.md`
                 display:block;
                 top:4%;
-            `
-        }
-        ${
-            media.lg`
+            `}
+    ${media.lg`
                 
                 top:5%;
-            `
-        }
-         ${
-            media.xl`
+            `}
+         ${media.xl`
                 
                 top:8%;
-            `
-        }
-    }
-`
-
-const ProcessSection = () => {
-    return (
-        <GenericWrapper>
-          
-                
-                <Heading>a simple process</Heading>
-          
-            
-            <ProcessBox>
-                <Row>
-                    {
-                        processes.map(process => (
-                            <Col md={3}>
-                                <Process title={process.title} text={process.text} icon={process.icon} /> 
-                            </Col>
-                        ))
-                    }
-                </Row>
-            </ProcessBox>
-            
-        </GenericWrapper>
-    )
-}
+            `}
+  }
+`;
+const Wrapper = styled.div`
+  margin-top: 6rem;
+`;
+const ProcessSection = ({ process }) => {
+  return (
+    <Wrapper>
+      <SecondaryHeading textAlign="center">{process.heading}</SecondaryHeading>
+      <ProcessBox>
+        <Row>
+          {process.items.map((item, index) => (
+            <Col md={3} key={index}>
+              <Process
+                title={item.title}
+                description={item.description}
+                icon={item.icon}
+              />
+            </Col>
+          ))}
+        </Row>
+      </ProcessBox>
+    </Wrapper>
+  );
+};
 export default ProcessSection;
