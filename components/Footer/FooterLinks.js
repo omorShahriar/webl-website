@@ -5,7 +5,7 @@ import styled from "styled-components";
 const NavItem = styled.li`
   list-style: none;
   margin-right: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.75rem;
 
   @media screen and (max-width: 991px) {
     margin-right: 1rem;
@@ -27,7 +27,7 @@ const NavItemBox = styled.ul`
     flex-wrap: wrap;
   }
   @media screen and (max-width: 767px) {
-    margin-top: 10rem;
+    margin-top: 2rem;
   }
 `;
 const FooterLinks = () => {

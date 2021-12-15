@@ -41,7 +41,7 @@ const Navbar = ({ toggle }) => {
             <NavbarContainer>
               <Link href="/" passHref>
                 <NavLogo>
-                  <img src="/brand-logo.svg" width="80px" height="80px" />
+                  <img src="/brand-logo.svg" width="80px" />
                 </NavLogo>
               </Link>
               <MobileIcon onClick={toggle}>

@@ -5,6 +5,7 @@ import { HiMail } from "react-icons/hi";
 const ReachButton = styled.a`
   margin-top: 2rem;
   color: #fff;
+
   text-decoration: none;
   display: inline-flex;
   align-items: center;

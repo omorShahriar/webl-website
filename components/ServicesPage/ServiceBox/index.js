@@ -7,6 +7,7 @@ import { Blank } from "../../Utils/Blank";
 
 const ServiceBoxWrapper = styled.div`
   border: 3px solid #ffb300;
+  background: #fff;
   border-radius: 35px;
   padding: 1rem;
   padding-top: 2rem;

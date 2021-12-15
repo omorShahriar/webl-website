@@ -42,6 +42,7 @@ export const TextArea = styled.textarea`
   padding: 0.5rem 0;
   padding-left: 1rem;
   font-weight: light;
+  min-height: 150px;
   color: #7a7a7a;
   outline: none;
   transform: 0.1s;

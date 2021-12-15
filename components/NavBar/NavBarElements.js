@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { media } from "styled-bootstrap-grid";
 
 export const Nav = styled.nav`
-  background: #fff;
+  background: transparent;
   height: 100px;
   display: flex;
   justify-content: center;
@@ -21,7 +21,6 @@ export const Nav = styled.nav`
     width: 100%;
   }
   @media screen and (min-width: 992px) {
-    background: ${({ isHomePage }) => (isHomePage ? "transparent" : "#fff")};
     width: 100%;
     position: ${({ isHomePage }) => (isHomePage ? "fixed" : "sticky")};
   }
