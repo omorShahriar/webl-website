@@ -7,25 +7,25 @@ const Box = styled.div`
   justify-content: center;
   margin-top: 0.75rem;
   font-size: 1rem;
+  gap: 0.25em;
   ${media.md`
         justify-content: flex-start;
+
     `}
   ${media.lg`
         font-size : 1.5rem;
         margin-top:1.5rem;
+        gap:.5em;
     `}
 `;
 const SocialLink = styled.a`
   color: #424242;
   text-decoration: none;
   font-size: 2rem;
-  margin-right: 0.5em;
+
   transition: all 0.3s ease-in;
   &:hover {
     color: #ffb300;
-  }
-  @media screen and (max-width: 767px) {
-    margin: 0.5em;
   }
 `;
 

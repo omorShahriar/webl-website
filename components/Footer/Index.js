@@ -118,7 +118,7 @@ const Footer = () => {
                 </SocialIconBox>
               </FindUsBox>
               <ReachLink type="mail" value="weblinnovations.team@gmail.com" />
-              <ReachLink type="phone" value="+8801797039209" />
+              <ReachLink type="phone" value="+8801749035147" />
             </FooterInnerrWrapper>
             <CopyRightBox>
               &copy; WebL Innovations, {new Date().getFullYear()}

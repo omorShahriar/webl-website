@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { media } from "styled-bootstrap-grid";
 
 export const PrimaryHeading = styled.h1`
-  color: #000;
+  color: ${({ color }) => (color ? color : "#000")};
   font-weight: bold;
   font-size: 1.75rem;
   line-height: 2rem;

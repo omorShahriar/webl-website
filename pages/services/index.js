@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 import { getClient } from "../../lib/sanity";
 import { NextSeo } from "next-seo";
-import { Container, Row, Col } from "styled-bootstrap-grid";
+import { Container, Row, Col, media } from "styled-bootstrap-grid";
 import { GenericWrapper } from "../../components/Utils/GenericWrapper";
 import Approach from "../../components/ServicesPage/ApproachSection/Approach";
 import FeaturesSection from "../../components/ServicesPage/FeaturesSection";
@@ -9,6 +9,7 @@ import ProcessSection from "../../components/ServicesPage/ProcessSection";
 import FAQSection from "../../components/ServicesPage/FAQSection";
 import styled from "styled-components";
 import { PrimaryHeading } from "../../components/Typography";
+import HeroImage from "components/ServicesPage/HeroImage";
 import ServiceBox from "../../components/ServicesPage/ServiceBox";
 
 const pageQuery = groq`
@@ -23,17 +24,33 @@ const pageQuery = groq`
 `;
 const HeaderBackground = styled.div`
   position: absolute;
-  top: 0;
+  top: 100px;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 70vh;
+  border-radius: 35px;
+  background-color: rgba(184, 232, 206, 0.4);
+  ${media.md`
+   width: 80%;
+   border-radius:0 35px 35px 0;
+   top: 0;
+  `}
+  ${media.xl`
+   height: 80vh;
+  `}
+`;
 
-  background-color: #ffffff;
-  opacity: 0.2;
-  background-image: radial-gradient(#006661 1px, transparent 1px),
-    radial-gradient(#006661 1px, #ffffff 1px);
-  background-size: 40px 40px;
-  background-position: 0 0, 20px 20px;
+const Heading = styled(PrimaryHeading)`
+  @media (min-width: 768px) {
+    text-align: left;
+    margin-bottom: 0;
+  }
+`;
+
+const HeroWrapper = styled.div`
+  ${media.md`
+    padding-bottom: 3rem ;
+  `}
 `;
 
 const Services = ({ data }) => {
@@ -43,10 +60,17 @@ const Services = ({ data }) => {
       <GenericWrapper>
         <HeaderBackground />
         <Container>
+          <HeroWrapper>
+            <Row>
+              <Col md={6} mdOrder={2}>
+                <HeroImage />
+              </Col>
+              <Col md={6} alignSelf="center">
+                <Heading color="#006661">{data.service.heading}</Heading>
+              </Col>
+            </Row>
+          </HeroWrapper>
           <Row>
-            <Col>
-              <PrimaryHeading>{data.service.heading}</PrimaryHeading>
-            </Col>
             <Col lgOffset={1} lg={10}>
               <ServiceBox services={data.service.services} />
             </Col>

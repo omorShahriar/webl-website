@@ -14,6 +14,9 @@ export const Label = styled.label`
   span {
     color: #ffb300;
   }
+  &:nth-child(1) {
+    margin-top: 0;
+  }
 `;
 
 export const Input = styled.input`

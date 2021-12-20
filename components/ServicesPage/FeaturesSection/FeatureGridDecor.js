@@ -6,18 +6,9 @@ const Wrapper = styled.div`
   right: 0;
   bottom: 0;
   position: absolute;
-  & #top-left,
-  #top-right,
-  #bottom-left,
-  #bottom-right,
-  #left-orange,
-  #right-orange,
-  #orangeTriangle,
-  #yelloTriangle,
-  #greenTriangle,
-  #leftBoxOutLineWCirc,
-  #rightBoxOutLineWCirc {
-    z-index: -100;
+  z-index: -100;
+  @media screen and (max-width: 591px) {
+    display: none;
   }
   & #top-left {
     position: absolute;

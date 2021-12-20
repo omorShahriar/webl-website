@@ -32,6 +32,7 @@ const OuterContactBox = styled.div`
     `}
 `;
 const ReachOutBox = styled.div`
+  padding-top: 2rem;
   @media screen and (max-width: 767px) {
     margin-top: 3rem;
     text-align: center;
@@ -47,9 +48,13 @@ const ContactBox = styled.div`
   }
 `;
 const Heading = styled.h2`
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  ${media.lg`
+      font-size: 1.75rem;
+       margin-bottom:1.75rem;
+    `}
+  text-transform: capitalize;
 `;
 
 const ReachButton = styled.a`
@@ -60,7 +65,8 @@ const ReachButton = styled.a`
   align-items: center;
   justify-content: flex-end;
   position: relative;
-  padding-bottom: 0.5rem;
+  font-size: 0.75rem;
+  padding-bottom: 0.25em;
   &::after {
     transition: all 0.3s ease-out;
     transform-origin: left;
@@ -91,12 +97,12 @@ const ButtonWrapper = styled.div`
 const StyledBiPhone = styled(BiPhone)`
   width: 2em;
   height: 2em;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 `;
 const StyledHiMail = styled(HiMail)`
   width: 2em;
   height: 2em;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 `;
 
 const Contact = () => {
@@ -112,13 +118,13 @@ const Contact = () => {
           </SubTitle>
           <OuterContactBox>
             <Row>
-              <Col md={4} order={2} mdAlignSelf="center">
+              <Col md={4} order={2}>
                 <ReachOutBox>
                   <Heading>reach out</Heading>
                   <ButtonWrapper>
-                    <ReachButton href={"tel:+8801797039209"}>
+                    <ReachButton href={"tel:+8801749035147"}>
                       <StyledBiPhone />
-                      +8801797039209
+                      +8801749035147
                     </ReachButton>
                   </ButtonWrapper>
                   <ButtonWrapper>
