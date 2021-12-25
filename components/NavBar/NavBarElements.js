@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { media } from "styled-bootstrap-grid";
 
 export const Nav = styled.nav`
-  background: transparent;
+  background: ${({ isHomePage }) => (isHomePage ? "transparent" : "#fff")};
   height: 100px;
   display: flex;
   justify-content: center;
@@ -12,13 +12,16 @@ export const Nav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 10;
-  transition: 0.2s all ease-out;
+  transition: all 0.2s ease-out;
   &::after {
     content: "";
-    border-bottom: none;
+    opacity: 0;
     bottom: 0;
     position: absolute;
     width: 100%;
+    background: #3cbb95;
+    height: 3px;
+    transition: all 0.2s ease-out;
   }
   @media screen and (min-width: 992px) {
     width: 100%;
@@ -27,8 +30,9 @@ export const Nav = styled.nav`
 
   &.scrolling {
     background: #fff;
+
     &::after {
-      border-bottom: 2px solid #3cbb95;
+      opacity: 1;
     }
   }
 `;

@@ -7,11 +7,17 @@ import {
   SecondaryBodyText,
   SecondaryHeading,
 } from "components/Typography";
-import { GenericWrapper } from "components/Utils/GenericWrapper";
 
 import styled from "styled-components";
+import Header from "components/StyleAssets/Header";
 
 const Heading = styled(PrimaryHeading)`
+  margin-bottom: 0;
+  ${media.md`
+        margin-bottom: 0;
+    
+       
+    `}
   & span {
     position: relative;
 
@@ -130,101 +136,104 @@ const ElementSquareBox = () => {
     </svg>
   );
 };
+
 const About = () => {
   return (
     <>
       <NextSeo title="About Us" />
-      <GenericWrapper>
-        <Container>
+
+      <Container>
+        <Header bgColor="#e3f6eb" dotColor="#3CBB95">
           <Heading>
-            We design, develop and deliver <br /> <span>e-learning</span>{" "}
+            We design, develop and deliver <br /> <span>e-learning</span>
             solutions
           </Heading>
-          <Row>
-            <Col lg={6}>
-              <SecondaryHeading>
-                We help you build a culture of learning
+        </Header>
+
+        <Row>
+          <Col lg={6}>
+            <SecondaryHeading>
+              We help you build a culture of learning
+            </SecondaryHeading>
+            <SecondaryBodyText>
+              We support organisations with a innovative learning approach
+              <br />
+              that integrates five elements:
+            </SecondaryBodyText>
+            <ElementList>
+              <Element>
+                <ElementSquareBox />
+                smart technology
+              </Element>
+              <Element>
+                <ElementSquareBox />
+                quality content
+              </Element>
+              <Element>
+                <ElementSquareBox />
+                practical tools
+              </Element>
+              <Element>
+                <ElementSquareBox />
+                expert guidance
+              </Element>
+              <Element>
+                <ElementSquareBox />
+                community support
+              </Element>
+            </ElementList>
+          </Col>
+          <Col lg={6}>
+            <SecondaryHeading>
+              Our values influence our work, products and culture
+            </SecondaryHeading>
+            <PerkBox>
+              <PerkCard>
+                <h3>Trusted and Respected</h3>
+                <p>
+                  By leading companies, organisations and government agencies of
+                  all sizes, across a wide range of industry sectors.
+                </p>
+              </PerkCard>
+              <PerkCard>
+                <h3>Working Together</h3>
+                <p>
+                  With experts in your organisation we help foster a culture of
+                  learning that is crucial to the success of your business and
+                  develop the talent of your team.
+                </p>
+              </PerkCard>
+              <PerkCard>
+                <h3>Client Focused</h3>
+                <p>
+                  Together we build awesome learning experiences which will
+                  increase productivity, reduce costs, transfer knowledge,
+                  increase motivation and strengthen organisational culture.
+                </p>
+              </PerkCard>
+              <PerkCard>
+                <h3>Exceptional Experience</h3>
+                <p>
+                  Thanks to our long and exceptional experience, we’ve had the
+                  chance to learn from our clients, too. About what works (and
+                  what doesn’t) when you truly want to excite people to learn.
+                </p>
+              </PerkCard>
+            </PerkBox>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <TheTeamBox>
+              <SecondaryHeading textAlign="center">
+                We are surrounded by smart, passionate people
               </SecondaryHeading>
-              <SecondaryBodyText>
-                We support organisations with a innovative learning approach
-                <br />
-                that integrates five elements:
-              </SecondaryBodyText>
-              <ElementList>
-                <Element>
-                  <ElementSquareBox />
-                  smart technology
-                </Element>
-                <Element>
-                  <ElementSquareBox />
-                  quality content
-                </Element>
-                <Element>
-                  <ElementSquareBox />
-                  practical tools
-                </Element>
-                <Element>
-                  <ElementSquareBox />
-                  expert guidance
-                </Element>
-                <Element>
-                  <ElementSquareBox />
-                  community support
-                </Element>
-              </ElementList>
-            </Col>
-            <Col lg={6}>
-              <SecondaryHeading>
-                Our values influence our work, products and culture
-              </SecondaryHeading>
-              <PerkBox>
-                <PerkCard>
-                  <h3>Trusted and Respected</h3>
-                  <p>
-                    By leading companies, organisations and government agencies
-                    of all sizes, across a wide range of industry sectors.
-                  </p>
-                </PerkCard>
-                <PerkCard>
-                  <h3>Working Together</h3>
-                  <p>
-                    With experts in your organisation we help foster a culture
-                    of learning that is crucial to the success of your business
-                    and develop the talent of your team.
-                  </p>
-                </PerkCard>
-                <PerkCard>
-                  <h3>Client Focused</h3>
-                  <p>
-                    Together we build awesome learning experiences which will
-                    increase productivity, reduce costs, transfer knowledge,
-                    increase motivation and strengthen organisational culture.
-                  </p>
-                </PerkCard>
-                <PerkCard>
-                  <h3>Exceptional Experience</h3>
-                  <p>
-                    Thanks to our long and exceptional experience, we’ve had the
-                    chance to learn from our clients, too. About what works (and
-                    what doesn’t) when you truly want to excite people to learn.
-                  </p>
-                </PerkCard>
-              </PerkBox>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <TheTeamBox>
-                <SecondaryHeading textAlign="center">
-                  We are surrounded by smart, passionate people
-                </SecondaryHeading>
-                <PeopleBox></PeopleBox>
-              </TheTeamBox>
-              <StorySection />
-            </Col>
-          </Row>
-        </Container>
-      </GenericWrapper>
+              <PeopleBox></PeopleBox>
+            </TheTeamBox>
+            <StorySection />
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 };
