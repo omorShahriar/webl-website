@@ -97,7 +97,12 @@ const HeroSection = ({ content }) => {
             </ButtonWrapper>
           </Col>
           <Col lg="6" order="first" lgOrder="2" mdAlignSelf="center">
-            <Image {...imageProps} layout="responsive" />
+            <Image
+              {...imageProps}
+              layout="responsive"
+              alt="webl innovations hero image"
+              priority
+            />
           </Col>
         </Row>
       </Container>

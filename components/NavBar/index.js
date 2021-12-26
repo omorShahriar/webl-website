@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { BreadCrumb } from "../../assets/BreadCrumb.js";
@@ -14,6 +15,7 @@ import {
   NavLink,
 } from "./NavBarElements";
 import StyledButton from "components/StyledButton.js";
+import Image from "next/image";
 const Navbar = ({ toggle }) => {
   const [navbar, setNavBar] = useState(false);
 
@@ -41,7 +43,13 @@ const Navbar = ({ toggle }) => {
             <NavbarContainer>
               <Link href="/" passHref>
                 <NavLogo>
-                  <img src="/brand-logo.svg" width="80px" />
+                  <Image
+                    src="/brand-logo.svg"
+                    width="80px"
+                    height="80px"
+                    title="Webl Innovations"
+                    alt="webl innovations logo"
+                  />
                 </NavLogo>
               </Link>
               <MobileIcon onClick={toggle}>
@@ -153,7 +161,14 @@ const Navbar = ({ toggle }) => {
             <NavbarContainer>
               <Link href="/" passHref>
                 <NavLogo>
-                  <img src="/brand-logo.svg" width="80px" height="80px" />
+                  <Image
+                    src="/brand-logo.svg"
+                    width="80px"
+                    height="80px"
+                    title="Webl Innovations"
+                    alt="webl innovations logo"
+                    priority
+                  />
                 </NavLogo>
               </Link>
               <MobileIcon onClick={toggle}>
