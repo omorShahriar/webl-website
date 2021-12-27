@@ -105,12 +105,14 @@ const Footer = () => {
                 <SocialIconBox>
                   <SocialLink
                     target="_blank"
+                    rel="noopener"
                     href="https://www.facebook.com/weblinnovations"
                   >
                     <FaFacebook />
                   </SocialLink>
                   <SocialLink
                     target="_blank"
+                    rel="noopener"
                     href="https://www.linkedin.com/company/webl-innovations/"
                   >
                     <FaLinkedin />

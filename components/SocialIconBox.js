@@ -40,12 +40,14 @@ const SocialIconBox = () => (
     <Heading>Find Us On</Heading>
     <Box>
       <SocialLink
+        rel="noopener"
         target="_blank"
         href="https://www.facebook.com/weblinnovations"
       >
         <FaFacebook />
       </SocialLink>
       <SocialLink
+        rel="noopener"
         target="_blank"
         href="https://www.linkedin.com/company/webl-innovations/"
       >

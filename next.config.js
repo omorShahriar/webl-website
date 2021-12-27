@@ -13,7 +13,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 const securityHeaders = [
   {
     key: "Content-Security-Policy",
-    value: "frame-ancestors 'none'",
+    value: "frame-ancestors 'none';object-src 'none';script-src 'self'",
   },
 ];
 
