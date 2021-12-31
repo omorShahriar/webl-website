@@ -5,6 +5,7 @@ import { Container, Row, Col, media } from "styled-bootstrap-grid";
 import StyledButton from "../../../StyledButton";
 import { sanityImageProps } from "lib/sanity";
 import { VerticalSeparator } from "../../../Utils/Seperator";
+import AppointmentButton from "./AppointmentLInk";
 
 const HeroWrapper = styled.div`
   padding-top: 5rem;
@@ -91,9 +92,7 @@ const HeroSection = ({ content }) => {
                 Get A Quote
               </StyledButton>
               <VerticalSeparator />
-              <StyledButton href="/appointment" borderColor="#FFDD02">
-                Book An Appointment
-              </StyledButton>
+              <AppointmentButton url="https://calendly.com/omorsh/15min" />
             </ButtonWrapper>
           </Col>
           <Col lg="6" order="first" lgOrder="2" mdAlignSelf="center">

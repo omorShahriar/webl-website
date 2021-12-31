@@ -3,7 +3,9 @@ import styled from "styled-components";
 
 export const LinkComponent = ({ as, children, className, href, rel }) => (
   <Link href={href} as={as} passHref>
-    <a className={className}>{children}</a>
+    <a className={className} style={{ textDecoration: "none" }}>
+      {children}
+    </a>
   </Link>
 );
 
@@ -18,4 +20,5 @@ const StyledLink = styled(LinkComponent)`
     color: #ffdd02;
   }
 `;
+
 export default StyledLink;

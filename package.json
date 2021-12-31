@@ -19,6 +19,8 @@
     "next-seo": "^4.28.1",
     "nodemailer": "^6.7.0",
     "react": "17.0.2",
+    "react-calendly": "^2.2.2",
+    "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "17.0.2",
     "react-hot-toast": "^2.1.1",
     "react-icons": "^4.3.1",

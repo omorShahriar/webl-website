@@ -2,43 +2,23 @@ import Image from "next/image";
 
 import styled from "styled-components";
 import { media } from "styled-bootstrap-grid";
-import { SecondaryHeading, SecondaryBodyText } from "../Typography";
 import AuthorBox from "./AuthorBox";
-import Link from "next/link";
 import { sanityImageProps } from "../../lib/sanity";
-const CardLink = styled.a`
-  text-decoration: none;
-  list-style: none;
-  text-align: center;
-  font-size: 0.75rem;
-  margin-left: auto;
-  cursor: pointer;
-  color: #424242;
-  padding: 0.35rem 0.7rem;
-  border: 3px solid #3cbb95;
-  transition: all 0.2s ease;
-  border-radius: 25px;
-  align-self: center;
-  &:hover {
-    background: #3cbb95;
-  }
-  ${media.md`
-   
-    padding : 0.5rem 1.25rem;
-  `}
-  ${media.lg`
-   
-    font-size:1rem;
-  `}
-`;
+import { LinkComponent } from "components/StyledLink";
+
 const CardWrapper = styled.div`
   margin-bottom: 2rem;
-  border: 3px solid #ffb300;
+  background: #fff;
+  box-shadow: none;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
+  transition: all 0.3s;
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
   ${media.md`
                 border-radius:25px ;
             `}
@@ -46,44 +26,73 @@ const CardWrapper = styled.div`
 
 const CoverImageBox = styled.div`
   border-radius: 0 0 25px 25px;
-  border-bottom: 3px solid #ffb300;
   overflow: hidden;
-  ${media.md`
-                border-radius: 0 0 50px 50px;
-            `}
+  height: 200px;
+  background: #3cbb95;
+  position: relative;
+  img {
+    z-index: 1;
+    object-fit: cover;
+    object-position: center;
+  }
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+    padding: 0.5rem;
+    text-align: center;
+    content: attr(data-title);
+    color: #fff;
+
+    font-size: 2rem;
+  }
 `;
 const CardContent = styled.div`
   padding: 0 0.75rem;
   margin: 1rem 0 2rem 0;
 `;
 
-const Title = styled(SecondaryHeading)`
-  text-transform: uppercase;
+const Title = styled.h2`
+  color: #006661;
+  font-size: 1.25rem;
+  text-transform: capitalcase;
+  line-height: 1.25;
   text-align: left;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s;
+  &:hover {
+    color: #3cbb95;
+  }
 `;
-const SubTitle = styled(SecondaryBodyText)`
+const SubTitle = styled.p`
+  color: #7a7a7a;
+  font-size: 0.75rem;
   text-align: left;
 `;
 
 const CardItem = ({ title, subtitle, image, date, author, link }) => {
   return (
-    <CardWrapper>
-      <CoverImageBox>
-        {image && <Image {...sanityImageProps(image)} layout="responsive" />}
-      </CoverImageBox>
-      <CardContent>
-        <Title>{title.length > 40 ? title.substr(0, 40) + "..." : title}</Title>
-        <SubTitle>
-          {subtitle &&
-            (subtitle.length > 80 ? subtitle.substr(0, 80) + "..." : subtitle)}
-        </SubTitle>
-        <AuthorBox author={author} date={date}>
-          <Link {...link} passHref>
-            <CardLink>Read More</CardLink>
-          </Link>
-        </AuthorBox>
-      </CardContent>
-    </CardWrapper>
+    <LinkComponent {...link}>
+      <CardWrapper>
+        <CoverImageBox data-title={title}>
+          {image && <Image {...sanityImageProps(image)} layout="responsive" />}
+        </CoverImageBox>
+        <CardContent>
+          <Title>{title}</Title>
+          <SubTitle>
+            {subtitle &&
+              (subtitle.length > 80
+                ? subtitle.substr(0, 80) + "..."
+                : subtitle)}
+          </SubTitle>
+          <AuthorBox author={author} date={date} centered></AuthorBox>
+        </CardContent>
+      </CardWrapper>
+    </LinkComponent>
   );
 };
 

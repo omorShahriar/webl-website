@@ -55,3 +55,13 @@ export const SecondaryBodyText = styled.p`
        
     `}
 `;
+
+export const Title = styled(PrimaryHeading)`
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  ${media.md`
+        font-size:4rem;
+        margin-bottom: 1.25rem;    
+    `}
+`;

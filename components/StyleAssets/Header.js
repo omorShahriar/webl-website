@@ -9,6 +9,8 @@ const HeaderBg = styled.header`
   padding: 3rem 0.5rem;
   margin-bottom: 3rem;
   #tr,
+  #tl,
+  #br,
   #bl {
     position: absolute;
     z-index: -10;
@@ -20,6 +22,14 @@ const HeaderBg = styled.header`
   #bl {
     bottom: 0;
     left: 0;
+  }
+  #tl {
+    top: 0;
+    left: 0;
+  }
+  #br {
+    bottom: 0;
+    right: 0;
   }
   ${media.md`
         margin-bottom: 4rem;
@@ -33,10 +43,10 @@ const HeaderBg = styled.header`
     `}
 `;
 
-const Header = ({ bgColor, dotColor, children }) => (
+const Header = ({ bgColor, dotColor, children, dotRev }) => (
   <HeaderBg bgColor={bgColor}>
-    <DotGrid id="tr" fill={dotColor} />
-    <DotGrid id="bl" fill={dotColor} />
+    <DotGrid id={dotRev ? "tl" : "tr"} fill={dotColor} />
+    <DotGrid id={dotRev ? "br" : "bl"} fill={dotColor} />
     {children}
   </HeaderBg>
 );

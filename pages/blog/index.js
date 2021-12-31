@@ -4,7 +4,6 @@ import { getPaginatedBlogs } from "../../lib/sanity";
 
 import moment from "moment";
 import { Row, Col, Container } from "styled-bootstrap-grid";
-import { GenericWrapper } from "../../components/Utils/GenericWrapper";
 
 import {
   LoadMore,
@@ -12,14 +11,15 @@ import {
 } from "../../components/BlogsPage/LoadMore";
 import Spinner from "components/Spinner";
 
-import { PrimaryHeading, SecondaryHeading } from "../../components/Typography";
+import { Title, SecondaryHeading } from "../../components/Typography";
 
 import CardItem from "../../components/BlogsPage/CardItem";
+import Header from "components/StyleAssets/Header";
 
 export const BlogList = ({ data = [] }) => {
   return data.map((page) =>
     page.map((blog) => (
-      <Col key={blog.slug} md={6}>
+      <Col key={blog.slug} md={6} lg={4}>
         <CardItem
           author={blog.author}
           title={blog.title}
@@ -43,39 +43,39 @@ export default function BlogPage({ blogs, preview }) {
   return (
     <>
       <NextSeo title="Blog" />
-      <GenericWrapper>
-        <Container>
-          {preview && <PreviewAlert />}
-          <PrimaryHeading textAlign="left">Blog.</PrimaryHeading>
 
-          <Row>
-            {blogs.length != 0 ? (
-              <>
-                <BlogList data={data || [blogs]} />
+      <Container>
+        <Header dotColor="#FFE082" bgColor="#FFE082">
+          <Title>Blog.</Title>
+        </Header>
 
-                <Col>
-                  <LoadMoreContainer>
-                    {hitEnd ? (
-                      <SecondaryHeading>No more posts yet!</SecondaryHeading>
-                    ) : isFetchingNextPage ? (
-                      <Spinner />
-                    ) : (
-                      <LoadMore
-                        onClick={() => setSize(size + 1)}
-                        disabled={isFetchingNextPage}
-                      >
-                        Load More
-                      </LoadMore>
-                    )}
-                  </LoadMoreContainer>
-                </Col>
-              </>
-            ) : (
-              <SecondaryHeading>No Blog Post Yet</SecondaryHeading>
-            )}
-          </Row>
-        </Container>
-      </GenericWrapper>
+        <Row>
+          {blogs.length != 0 ? (
+            <>
+              <BlogList data={data || [blogs]} />
+
+              <Col>
+                <LoadMoreContainer>
+                  {hitEnd ? (
+                    <SecondaryHeading>No more posts yet!</SecondaryHeading>
+                  ) : isFetchingNextPage ? (
+                    <Spinner />
+                  ) : (
+                    <LoadMore
+                      onClick={() => setSize(size + 1)}
+                      disabled={isFetchingNextPage}
+                    >
+                      Load More Posts
+                    </LoadMore>
+                  )}
+                </LoadMoreContainer>
+              </Col>
+            </>
+          ) : (
+            <SecondaryHeading>No Blog Post Yet</SecondaryHeading>
+          )}
+        </Row>
+      </Container>
     </>
   );
 }

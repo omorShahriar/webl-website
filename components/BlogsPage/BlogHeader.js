@@ -10,7 +10,8 @@ import {
   LinkedinIcon,
   LinkedinShareButton,
 } from "react-share";
-import { VerticalSeparator } from "components/Utils/Seperator";
+
+import CopyToClipboardLink from "components/CopyToClipboard";
 const CoverImageBox = styled.div`
   margin: 2rem 0;
   border-radius: 25px;
@@ -33,17 +34,18 @@ const Title = styled(PrimaryHeading)`
 `;
 const Info = styled.div`
   margin: 2rem 0;
-  background: #b8e8ce;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   color: #424242;
   padding: 1rem;
   border-radius: 15px;
   display: flex;
   align-items: center;
-
+  flex-wrap: wrap;
+  justify-content: space-between;
   span {
     font-weight: bold;
     font-size: 1rem;
-    margin-right: 1rem;
   }
 `;
 const Synopsys = styled.div`
@@ -53,7 +55,19 @@ const Synopsys = styled.div`
   padding: 1rem;
   border-radius: 15px;
 `;
+const SocialShareBox = styled.div`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+`;
 
+const CopyToClipboardBox = styled.div`
+  display: flex;
+  align-item: center;
+  span {
+    margin-right: 1rem;
+  }
+`;
 export default function BlogHeader({
   title,
   subtitle,
@@ -78,15 +92,21 @@ export default function BlogHeader({
         </CoverImageBox>
       )}
       <Info>
-        <span>Share on : </span>
+        <SocialShareBox>
+          <span>Share on : </span>
+          <FacebookShareButton url={fullUrl}>
+            <FacebookIcon size={32} round={true} />
+          </FacebookShareButton>
 
-        <FacebookShareButton url={fullUrl}>
-          <FacebookIcon size={32} round={true} />
-        </FacebookShareButton>
-        <VerticalSeparator bgColor="#424242" />
-        <LinkedinShareButton title={title} url={fullUrl}>
-          <LinkedinIcon size={32} round={true} />
-        </LinkedinShareButton>
+          <LinkedinShareButton title={title} url={fullUrl}>
+            <LinkedinIcon size={32} round={true} />
+          </LinkedinShareButton>
+        </SocialShareBox>
+
+        <CopyToClipboardBox>
+          <span>Copy link to Clipboard :</span>
+          <CopyToClipboardLink url={fullUrl} />
+        </CopyToClipboardBox>
       </Info>
       <Synopsys>
         <h2>Quick Summary</h2>

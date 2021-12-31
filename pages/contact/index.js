@@ -2,7 +2,6 @@ import { NextSeo } from "next-seo";
 
 import { Container, media, Row, Col } from "styled-bootstrap-grid";
 import { PrimaryHeading, SecondaryHeading } from "components/Typography";
-import { GenericWrapper } from "components/Utils/GenericWrapper";
 import ContactForm from "components/ContactPage/ContactForm";
 import styled from "styled-components";
 import { BiPhone } from "react-icons/bi";
