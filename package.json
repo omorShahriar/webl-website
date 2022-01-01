@@ -24,6 +24,7 @@
     "react-dom": "17.0.2",
     "react-hot-toast": "^2.1.1",
     "react-icons": "^4.3.1",
+    "react-messenger-customer-chat": "^0.8.0",
     "react-share": "^4.4.0",
     "react-tiny-crossfade": "^2.0.0",
     "sharp": "^0.29.2",

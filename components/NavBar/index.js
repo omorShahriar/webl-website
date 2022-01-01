@@ -120,22 +120,7 @@ const Navbar = ({ toggle }) => {
                     </NavLink>
                   </Link>
                 </NavItem>
-                <NavItem>
-                  <Link href="/work" passHref>
-                    <NavLink
-                      isHomePage={isHomePage}
-                      className={
-                        router.pathname == "/work"
-                          ? "active"
-                          : "" || navbar
-                          ? "scrolling"
-                          : ""
-                      }
-                    >
-                      WORK
-                    </NavLink>
-                  </Link>
-                </NavItem>
+
                 <NavItem>
                   <StyledButton
                     href="/contact"
@@ -209,15 +194,7 @@ const Navbar = ({ toggle }) => {
                     </NavLink>
                   </Link>
                 </NavItem>
-                <NavItem>
-                  <Link href="/work" passHref>
-                    <NavLink
-                      className={router.pathname == "/work" ? "active" : ""}
-                    >
-                      WORK
-                    </NavLink>
-                  </Link>
-                </NavItem>
+
                 <NavItem>
                   <StyledButton
                     href="/contact"

@@ -50,14 +50,7 @@ const Sidebar = ({ isOpen, toggle }) => {
               Blog
             </SidebarLink>
           </Link>
-          <Link href="/work" passHref>
-            <SidebarLink
-              className={router.pathname == "/work" ? "active" : ""}
-              onClick={toggle}
-            >
-              Work
-            </SidebarLink>
-          </Link>
+
           <Link href="/contact" passHref>
             <SidebarLink
               className={router.pathname == "/contact" ? "active" : ""}

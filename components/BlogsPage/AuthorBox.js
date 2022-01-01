@@ -21,14 +21,15 @@ const AuthorWrapper = styled.div`
 const AuthorImage = styled.div`
   border-radius: 50%;
   overflow: hidden;
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
   margin-right: 1rem;
 `;
 
 const AuthorName = styled.h3`
   font-style: italic;
-  font-size: 0.625rem;
+  font-size: 0.8125rem;
+  line-height: 1rem;
   color: #424242;
   display: flex;
   flex-direction: column;
@@ -36,7 +37,8 @@ const AuthorName = styled.h3`
 const PublishDate = styled.span`
   color: #7a7a7a;
   font-style: normal;
-  font-size: 0.625rem;
+  font-size: 0.8125rem;
+  line-height: 1rem;
 `;
 
 const AuthorBox = ({ children, author, date, centered }) => {

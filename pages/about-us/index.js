@@ -1,6 +1,6 @@
 import { NextSeo } from "next-seo";
 import PeopleBox from "components/AboutUsPage/Sections/PeopleSection/PeopleBox";
-import StorySection from "components/AboutUsPage/Sections/OurStorySection";
+
 import { Container, media, Row, Col } from "styled-bootstrap-grid";
 import {
   PrimaryHeading,
@@ -16,7 +16,6 @@ const Heading = styled(PrimaryHeading)`
   ${media.md`
         margin-bottom: 0;
     
-       
     `}
   & span {
     position: relative;
@@ -112,6 +111,7 @@ const PerkCard = styled.div`
 
 const TheTeamBox = styled.div`
   padding-top: 6rem;
+  margin-bottom: 3rem;
 `;
 
 const ElementSquareBox = () => {
@@ -230,7 +230,6 @@ const About = () => {
               </SecondaryHeading>
               <PeopleBox></PeopleBox>
             </TheTeamBox>
-            <StorySection />
           </Col>
         </Row>
       </Container>

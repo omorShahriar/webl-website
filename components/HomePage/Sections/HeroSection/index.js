@@ -92,7 +92,7 @@ const HeroSection = ({ content }) => {
                 Get A Quote
               </StyledButton>
               <VerticalSeparator />
-              <AppointmentButton url="https://calendly.com/omorsh/15min" />
+              <AppointmentButton url="https://calendly.com/weblinnovations-team/book-an-appointment" />
             </ButtonWrapper>
           </Col>
           <Col lg="6" order="first" lgOrder="2" mdAlignSelf="center">
