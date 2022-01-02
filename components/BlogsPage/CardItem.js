@@ -9,7 +9,7 @@ import { LinkComponent } from "components/StyledLink";
 const CardWrapper = styled.div`
   margin-bottom: 2rem;
   background: #fff;
-  box-shadow: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   display: flex;
   flex-direction: column;

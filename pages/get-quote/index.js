@@ -97,8 +97,8 @@ const GetQuote = () => {
       </OuterBackground>
       <Container>
         <InnerWrapper>
-          <Title>Get a quote</Title>
           <Form onSubmit={onSubmit}>
+            <Title>Get a quote</Title>
             <FormGroup>
               <Label htmlFor="name">
                 Name

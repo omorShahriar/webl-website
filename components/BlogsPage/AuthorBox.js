@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { media } from "styled-bootstrap-grid";
-import Image from "next/image";
-import { urlFor } from "../../lib/sanity";
 
 const AuthorWrapper = styled.div`
   margin-top: 1.25rem;
@@ -43,14 +41,6 @@ const PublishDate = styled.span`
 const AuthorBox = ({ children, author, date, centered }) => {
   return (
     <AuthorWrapper centered={centered}>
-      <AuthorImage>
-        <Image
-          src={urlFor(author.avatar).url()}
-          width={30}
-          height={30}
-          alt={`${author.name}'s image`}
-        />
-      </AuthorImage>
       <AuthorName>
         {author.name}
         <PublishDate>{date}</PublishDate>

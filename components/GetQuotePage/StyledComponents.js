@@ -6,11 +6,11 @@ export const InnerWrapper = styled.div`
   margin-bottom: 3rem;
 `;
 export const Title = styled.h1`
-  margin-top: 1.5rem;
   font-weight: 500;
   font-size: 20px;
-  color: #fff;
+  color: #1e1e1e;
   line-height: 24px;
+  text-align: center;
   @media screen and (min-width: 768px) {
     font-size: 24px;
     line-height: 32px;
@@ -103,7 +103,7 @@ export const Label = styled.label`
 export const FormGroup = styled.div`
   margin-top: 1rem;
   &:nth-of-type(1) {
-    margin-top: 0;
+    margin-top: 1.5rem;
   }
 `;
 

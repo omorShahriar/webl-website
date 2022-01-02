@@ -26,7 +26,7 @@ const StyledButton = styled(LinkComponent)`
       color:${({ isHomePage }) => (isHomePage ? "#fff" : "#424242")};
       border-radius: 25px;
       font-size: 1rem;
-      line-height:24pxpx;
+      line-height:24px;
     `}
   &.scrolling {
     color: #424242;
