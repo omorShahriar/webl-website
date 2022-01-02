@@ -13,7 +13,7 @@ import {
 import { Row, Col, Container } from "styled-bootstrap-grid";
 import { GenericWrapper } from "components/Utils/GenericWrapper";
 
-import moment from "moment";
+import dayjs from "dayjs";
 import { useRouter } from "next/router";
 
 import BlogHeader from "components/BlogsPage/BlogHeader";
@@ -33,7 +33,7 @@ const BlogDetail = ({ blog: initialBlog, preview, error }) => {
     }
 
     return () => sub && sub.unsubscribe();
-  }, []);
+  }, [blog.slug]);
 
   // if (!router.isFallback && !blog?.slug) {
   //   return <ErrorPage statusCode="404"/>
@@ -54,13 +54,12 @@ const BlogDetail = ({ blog: initialBlog, preview, error }) => {
         <Container>
           <Row>
             <Col md={10} mdOffset={1}>
-              {preview && <PreviewAlert />}
               <BlogHeader
                 title={blog.title}
                 subtitle={blog.subtitle}
                 imageProps={imageProps}
                 author={blog.author}
-                date={moment(blog.date).format("LL")}
+                date={dayjs(blog.date).format("DD MMMM, YYYY")}
               />
 
               {blog.content && <BlogContent content={blog.content} />}

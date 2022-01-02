@@ -1,8 +1,7 @@
 import { NextSeo } from "next-seo";
 import { useGetBlogsPages } from "../../actions/pagination";
 import { getPaginatedBlogs } from "../../lib/sanity";
-
-import moment from "moment";
+import dayjs from "dayjs";
 import { Row, Col, Container } from "styled-bootstrap-grid";
 
 import {
@@ -24,7 +23,7 @@ export const BlogList = ({ data = [] }) => {
           author={blog.author}
           title={blog.title}
           subtitle={blog.subtitle}
-          date={moment(blog.date).format("LL")}
+          date={dayjs(blog.date).format("DD MMMM, YYYY")}
           image={blog.coverImage}
           link={{
             href: "/blog/[slug]",

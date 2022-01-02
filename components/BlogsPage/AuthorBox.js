@@ -5,7 +5,6 @@ import { urlFor } from "../../lib/sanity";
 
 const AuthorWrapper = styled.div`
   margin-top: 1.25rem;
-
   display: flex;
   align-items: center;
   justify-content: ${({ centered }) => (centered ? "center" : "flex-start")};
@@ -45,7 +44,12 @@ const AuthorBox = ({ children, author, date, centered }) => {
   return (
     <AuthorWrapper centered={centered}>
       <AuthorImage>
-        <Image src={urlFor(author.avatar).url()} width={50} height={50} />
+        <Image
+          src={urlFor(author.avatar).url()}
+          width={30}
+          height={30}
+          alt={`${author.name}'s image`}
+        />
       </AuthorImage>
       <AuthorName>
         {author.name}

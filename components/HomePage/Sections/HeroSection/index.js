@@ -88,7 +88,7 @@ const HeroSection = ({ content }) => {
             <HeroDescription>{content.tagline}</HeroDescription>
 
             <ButtonWrapper>
-              <StyledButton href="/quote" borderColor="#3CBB95">
+              <StyledButton href="/get-quote" borderColor="#3CBB95">
                 Get A Quote
               </StyledButton>
               <VerticalSeparator />

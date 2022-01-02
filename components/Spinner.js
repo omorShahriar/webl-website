@@ -19,12 +19,12 @@ const SVG = styled.svg`
   }
 `;
 
-const Spinner = () => {
+const Spinner = ({ color, size }) => {
   return (
     <SVG
       className="spinner"
-      width={48}
-      height={48}
+      width={size ? size : 30}
+      height={size ? size : 30}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 100 100"
       preserveAspectRatio="xMidYMid"
@@ -35,7 +35,7 @@ const Spinner = () => {
         cx={50}
         cy={50}
         r={40}
-        stroke="#3CBB95"
+        stroke={color ? color : "#3CBB95"}
         fill="none"
         strokeWidth={8}
         strokeLinecap="round"

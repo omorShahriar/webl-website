@@ -13,16 +13,20 @@ const StyledButton = styled(LinkComponent)`
   border-radius: 15px;
   border-color: ${({ borderColor }) => (borderColor ? borderColor : "#FFB300")};
   font-size: 0.75rem;
-  font-weight: 300;
+  font-weight: 500;
+  padding: 8px 24px;
+  font-family: "Poppins", sans-serif;
+  line-height: 16px;
   color: #424242;
   text-decoration: none;
-  padding: 5px 15px;
+
   background: transparent;
   transition: all 0.3s ease-in;
   ${media.lg`
       color:${({ isHomePage }) => (isHomePage ? "#fff" : "#424242")};
       border-radius: 25px;
       font-size: 1rem;
+      line-height:24pxpx;
     `}
   &.scrolling {
     color: #424242;

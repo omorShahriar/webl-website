@@ -13,16 +13,7 @@ export const Nav = styled.nav`
   top: 0;
   z-index: 10;
   transition: all 0.2s ease-out;
-  &::after {
-    content: "";
-    opacity: 0;
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-    background: #3cbb95;
-    height: 3px;
-    transition: all 0.2s ease-out;
-  }
+
   @media screen and (min-width: 992px) {
     width: 100%;
     position: ${({ isHomePage }) => (isHomePage ? "fixed" : "sticky")};
@@ -30,10 +21,7 @@ export const Nav = styled.nav`
 
   &.scrolling {
     background: #fff;
-
-    &::after {
-      opacity: 1;
-    }
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
 `;
 
@@ -87,6 +75,7 @@ export const NavItem = styled.li`
 export const NavLink = styled.a`
   color: #424242;
   text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
   text-decoration: none;
   padding: 0 1rem;
   cursor: pointer;
