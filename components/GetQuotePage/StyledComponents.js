@@ -51,13 +51,12 @@ export const TextArea = styled.textarea`
   width: 100%;
   outline: none;
   &:focus {
-    border: 2px solid #3cbb95;
+    border: ${({ error }) => (error ? "2px solid red" : "2px solid #3cbb95")};
   }
 `;
 export const Button = styled.button`
   cursor: pointer;
   background: #006661;
-
   color: #fff;
   font-family: "Poppins", sans-serif;
   font-weight: 500;

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { NextSeo } from "next-seo";
-
 import Spinner from "components/Spinner";
 import { sanityImageProps } from "lib/sanity";
 
@@ -33,7 +32,7 @@ const BlogDetail = ({ blog: initialBlog, preview, error }) => {
     }
 
     return () => sub && sub.unsubscribe();
-  }, [blog.slug]);
+  }, []);
 
   // if (!router.isFallback && !blog?.slug) {
   //   return <ErrorPage statusCode="404"/>
