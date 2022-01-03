@@ -8,7 +8,7 @@ const pageQuery = groq`
 `;
 
 import HeroSection from "../components/HomePage/Sections/HeroSection";
-import ReviewSection from "../components/HomePage/Sections/ReviewsSection";
+
 import ServicesSection from "../components/HomePage/Sections/ServicesSection";
 import WhyUsSection from "../components/HomePage/Sections/WhyUsSection";
 
@@ -20,7 +20,6 @@ export default function Home({ data }) {
       <HeroSection content={content[0]} />
       <WhyUsSection content={content[1]} />
       <ServicesSection content={content[2]} />
-      <ReviewSection />
     </>
   );
 }

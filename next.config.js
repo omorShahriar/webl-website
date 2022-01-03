@@ -10,14 +10,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 
-const securityHeaders = [
-  {
-    key: "Content-Security-Policy",
-    value:
-      "frame-ancestors 'none';object-src 'none';script-src 'self' https://connect.facebook.net",
-  },
-];
-
 module.exports = withBundleAnalyzer({
   rewrites: () => [STUDIO_REWRITE],
   generateBuildId: () => "build",
@@ -34,13 +26,5 @@ module.exports = withBundleAnalyzer({
     });
 
     return config;
-  },
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: securityHeaders,
-      },
-    ];
   },
 });
