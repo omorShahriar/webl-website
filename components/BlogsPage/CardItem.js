@@ -7,13 +7,13 @@ import { sanityImageProps } from "../../lib/sanity";
 import { LinkComponent } from "components/StyledLink";
 
 const CardWrapper = styled.div`
-  margin-bottom: 2rem;
   background: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  height: 100%;
   overflow: hidden;
   transition: all 0.3s;
   &:hover {

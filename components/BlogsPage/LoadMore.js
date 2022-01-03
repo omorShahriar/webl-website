@@ -8,6 +8,11 @@ export const LoadMore = styled.button`
   background: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: #424242;
+  font-size: 1rem;
+  line-height: 1.5rem;
   &:hover {
     background: #3cbb95;
   }

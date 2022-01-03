@@ -1,8 +1,8 @@
 import { NextSeo } from "next-seo";
 import { useGetBlogsPages } from "../../actions/pagination";
 import { getPaginatedBlogs } from "../../lib/sanity";
-import dayjs from "dayjs";
-import { Row, Col, Container } from "styled-bootstrap-grid";
+
+import { Container } from "styled-bootstrap-grid";
 
 import {
   LoadMore,
@@ -12,28 +12,8 @@ import Spinner from "components/Spinner";
 
 import { Title, SecondaryHeading } from "../../components/Typography";
 
-import CardItem from "../../components/BlogsPage/CardItem";
+import BlogList from "components/BlogsPage/BlogList";
 import Header from "components/StyleAssets/Header";
-
-export const BlogList = ({ data = [] }) => {
-  return data.map((page) =>
-    page.map((blog) => (
-      <Col key={blog.slug} md={6} lg={4}>
-        <CardItem
-          author={blog.author}
-          title={blog.title}
-          subtitle={blog.subtitle}
-          date={dayjs(blog.date).format("DD MMMM, YYYY")}
-          image={blog.coverImage}
-          link={{
-            href: "/blog/[slug]",
-            as: `/blog/${blog.slug}`,
-          }}
-        />
-      </Col>
-    ))
-  );
-};
 
 export default function BlogPage({ blogs, preview }) {
   const { data, size, setSize, hitEnd, isFetchingNextPage } =
@@ -48,32 +28,28 @@ export default function BlogPage({ blogs, preview }) {
           <Title>Blog.</Title>
         </Header>
 
-        <Row>
-          {blogs.length != 0 ? (
-            <>
-              <BlogList data={data || [blogs]} />
+        {blogs.length != 0 ? (
+          <>
+            <BlogList data={data || [blogs]} />
 
-              <Col>
-                <LoadMoreContainer>
-                  {hitEnd ? (
-                    <SecondaryHeading>No more posts yet!</SecondaryHeading>
-                  ) : isFetchingNextPage ? (
-                    <Spinner />
-                  ) : (
-                    <LoadMore
-                      onClick={() => setSize(size + 1)}
-                      disabled={isFetchingNextPage}
-                    >
-                      Load More Posts
-                    </LoadMore>
-                  )}
-                </LoadMoreContainer>
-              </Col>
-            </>
-          ) : (
-            <SecondaryHeading>No Blog Post Yet</SecondaryHeading>
-          )}
-        </Row>
+            <LoadMoreContainer>
+              {hitEnd ? (
+                <SecondaryHeading>No more posts yet!</SecondaryHeading>
+              ) : isFetchingNextPage ? (
+                <Spinner />
+              ) : (
+                <LoadMore
+                  onClick={() => setSize(size + 1)}
+                  disabled={isFetchingNextPage}
+                >
+                  Load More Posts
+                </LoadMore>
+              )}
+            </LoadMoreContainer>
+          </>
+        ) : (
+          <SecondaryHeading>No Blog Post Yet</SecondaryHeading>
+        )}
       </Container>
     </>
   );
