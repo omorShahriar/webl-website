@@ -186,24 +186,19 @@ export const processes = [
 
 export const faqs = [
   {
-    question: "When can we get started?",
+    question: "How can we get started?",
     answer:
-      "Tenetur ullam rerum ad iusto possimus sequi mollitia dolore sunt quam praesentium. Tenetur ullam rerum ad iusto possimus sequi mollitia dolore sunt quam praesentium.Tenetur ullam rerum ad iusto possimus sequi mollitia dolore sunt quam praesentium.",
+      "After getting all your requirements clearly and determining a reasonable price, we can start working on your project.",
   },
   {
-    question: "can you develop small or large size projects?",
+    question: "How much does it cost?",
     answer:
-      "Whether you have 15 minutes of content or 100 volumes we can scale to any size project easily.  Our process is intuitive, scalable and adaptable with your project manager responding to any changing requirements throughout the process.",
+      "The cost highly depends on client requirements but we make sure that clients get the best product for their money.",
   },
   {
-    question: "are you articulate experts?",
+    question: "Can you develop a small or large size project?",
     answer:
-      "Aperiam ab atque incidunt dolores ullam est, earum ipsa recusandae velit cumque. Aperiam ab atque incidunt dolores ullam est, earum ipsa recusandae velit cumque.",
-  },
-  {
-    question: "how much does it cost?",
-    answer:
-      "Blanditiis aliquid adipisci quisquam reiciendis voluptates itaque.",
+      "Whether you have 15 minutes of content or 100 volumes, we can scale to any size project easily. Our process includes intense and intuitive research which is scalable and adaptable with your project.",
   },
 ];
 
