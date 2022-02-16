@@ -1,11 +1,10 @@
-import React from "react";
-import Image from "next/image";
 import styled from "styled-components";
 import { Container, Row, Col, media } from "styled-bootstrap-grid";
 import StyledButton from "../../../StyledButton";
-import { sanityImageProps } from "lib/sanity";
 import { VerticalSeparator } from "../../../Utils/Seperator";
 import AppointmentButton from "./AppointmentLInk";
+import Lottie from "react-lottie";
+import * as animationData from "../../../../assets/hero-animation.json";
 
 const HeroWrapper = styled.div`
   padding-top: 5rem;
@@ -78,7 +77,11 @@ const ButtonWrapper = styled.div`
 `;
 
 const HeroSection = ({ content }) => {
-  const imageProps = sanityImageProps(content?.heroImage);
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+  };
   return (
     <HeroWrapper>
       <Container>
@@ -96,12 +99,7 @@ const HeroSection = ({ content }) => {
             </ButtonWrapper>
           </Col>
           <Col lg="6" order="first" lgOrder="2" mdAlignSelf="center">
-            <Image
-              {...imageProps}
-              layout="responsive"
-              alt="webl innovations hero image"
-              priority
-            />
+            <Lottie options={defaultOptions} />
           </Col>
         </Row>
       </Container>
