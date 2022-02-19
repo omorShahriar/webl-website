@@ -15,7 +15,7 @@ import ServiceBox from "../../components/ServicesPage/ServiceBox";
 
 const HeroImage = dynamic(() => import("components/ServicesPage/HeroImage"), {
   ssr: false,
-  loading: () => <HeroSkeleton width={520} height={324.11} />,
+  loading: () => <HeroSkeleton height={324.11} />,
 });
 
 const pageQuery = groq`

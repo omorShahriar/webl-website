@@ -14,10 +14,10 @@ const Wrapper = ({ children }) => (
     {children}
   </div>
 );
-const HeroSkeleton = ({ count = 1, width = 540, height = 351 }) => {
+const HeroSkeleton = ({ count = 1, height = 351 }) => {
   return (
     <Wrapper>
-      <Skeleton count={count} width={width} height={height} />
+      <Skeleton count={count} height={height} />
     </Wrapper>
   );
 };

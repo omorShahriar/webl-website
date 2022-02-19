@@ -1,11 +1,31 @@
+import dynamic from "next/dynamic";
 import styled from "styled-components";
 import { Container, Row, Col, media } from "styled-bootstrap-grid";
 import StyledButton from "../../../StyledButton";
 import { VerticalSeparator } from "../../../Utils/Seperator";
 import AppointmentButton from "./AppointmentLInk";
 
-import Lottie from "lottie-react-web";
-import animation from "../../../../assets/hero-animation.json";
+const HeroImage = dynamic(() => import("./HeroImage"), {
+  ssr: false,
+  loading: () => (
+    <div className="placeholder">
+      <style jsx>{`
+        .placeholder {
+          height: 201.06px;
+        }
+        @media screen and (min-width: 768px) {
+          height: 395.13px;
+        }
+        @media screen and (min-width: 1024px) {
+          height: 260.13px;
+        }
+        @media screen and (min-width: 1200px) {
+          height: 310.75px;
+        }
+      `}</style>
+    </div>
+  ),
+});
 
 const HeroWrapper = styled.div`
   padding-top: 5rem;
@@ -95,11 +115,7 @@ const HeroSection = ({ content }) => {
             </ButtonWrapper>
           </Col>
           <Col lg="6" order="first" lgOrder="2" mdAlignSelf="center">
-            <Lottie
-              options={{
-                animationData: animation,
-              }}
-            />
+            <HeroImage />
           </Col>
         </Row>
       </Container>
