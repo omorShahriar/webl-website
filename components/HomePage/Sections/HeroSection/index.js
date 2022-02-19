@@ -3,8 +3,9 @@ import { Container, Row, Col, media } from "styled-bootstrap-grid";
 import StyledButton from "../../../StyledButton";
 import { VerticalSeparator } from "../../../Utils/Seperator";
 import AppointmentButton from "./AppointmentLInk";
-import Lottie from "react-lottie";
-import * as animationData from "../../../../assets/hero-animation.json";
+
+import Lottie from "lottie-react-web";
+import animation from "../../../../assets/hero-animation.json";
 
 const HeroWrapper = styled.div`
   padding-top: 5rem;
@@ -77,11 +78,6 @@ const ButtonWrapper = styled.div`
 `;
 
 const HeroSection = ({ content }) => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-  };
   return (
     <HeroWrapper>
       <Container>
@@ -99,7 +95,11 @@ const HeroSection = ({ content }) => {
             </ButtonWrapper>
           </Col>
           <Col lg="6" order="first" lgOrder="2" mdAlignSelf="center">
-            <Lottie options={defaultOptions} />
+            <Lottie
+              options={{
+                animationData: animation,
+              }}
+            />
           </Col>
         </Row>
       </Container>

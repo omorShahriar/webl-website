@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import { groq } from "next-sanity";
 import { getClient } from "../../lib/sanity";
 import { NextSeo } from "next-seo";
@@ -9,8 +10,13 @@ import ProcessSection from "../../components/ServicesPage/ProcessSection";
 import FAQSection from "../../components/ServicesPage/FAQSection";
 import styled from "styled-components";
 import { PrimaryHeading } from "../../components/Typography";
-import HeroImage from "components/ServicesPage/HeroImage";
+import HeroSkeleton from "components/HeroSkeleton";
 import ServiceBox from "../../components/ServicesPage/ServiceBox";
+
+const HeroImage = dynamic(() => import("components/ServicesPage/HeroImage"), {
+  ssr: false,
+  loading: () => <HeroSkeleton />,
+});
 
 const pageQuery = groq`
   *[_type == "page" && title == "Services"][0]{
