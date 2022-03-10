@@ -218,6 +218,28 @@ export const members = [
     name: "Aashab Tajwar Khan",
     designation: "Head of Technology",
   },
+
+  {
+    picture: "/team-pic/sadiya.jpg",
+    name: "Sadiya Mannan",
+    designation: "creative visualizer",
+  },
+  {
+    picture: "/team-pic/esrat.jpg",
+    name: "Esrat Sadia",
+    designation: "Associate, Business development ",
+  },
+
+  {
+    picture: "/team-pic/shalfi.jpg",
+    name: "Kazi Mohammad Amor Shalfi",
+    designation: "Research Analyst",
+  },
+  {
+    picture: "/team-pic/omor.jpg",
+    name: "Omor Bin Mahfuz",
+    designation: "Front-End Developer",
+  },
 ];
 
 export const stories = [
