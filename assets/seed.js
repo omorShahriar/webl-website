@@ -222,7 +222,7 @@ export const members = [
   {
     picture: "/team-pic/sadiya.jpg",
     name: "Sadiya Mannan",
-    designation: "creative visualizer",
+    designation: "Creative Visualizer",
   },
   {
     picture: "/team-pic/esrat.jpg",

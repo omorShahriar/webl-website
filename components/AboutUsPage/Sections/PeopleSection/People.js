@@ -12,6 +12,7 @@ const Wrapper = styled.div`
   & p {
     font-size: 0.75rem;
     color: #7a7a7a;
+    text-transform: capitalize;
   }
 `;
 const DP = styled.div`
